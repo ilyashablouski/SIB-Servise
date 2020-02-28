@@ -1,0 +1,46 @@
+header.header
+  .header-nav
+    .wrapper
+      .header-nav__inner
+        a.header-nav-info.first(href='#')
+          <svg class="icon icon__info">
+          <use xlink:href="#info"></use>
+          </svg>
+          span.header-nav-info__text Информация
+
+        a.header-nav-catalog(href='#')
+          <svg class="icon icon__burger-btn">
+          <use xlink:href="#burger-btn"></use>
+          </svg>
+          span.header-nav-catalog__text Каталог
+  .wrapper
+    .header-sub
+      .logo.header-sub__logo
+        span.logo__text СИБ-сервис
+
+      .search.search-header.header-sub__search-header
+        form.search__form(action='#', name='search-form')
+          input.search__input(type='search', placeholder='Название, артикул, производитель', required)
+          button.search__button(type='submit')
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.863 15.184L11.9747 11.2958C13.0177 10.0967 13.6492 8.53215 13.6492 6.82217C13.6492 3.05809 10.5876 0 6.82706 0C3.06298 0 0.00488281 3.06164 0.00488281 6.82217C0.00488281 10.5827 3.06652 13.6443 6.82706 13.6443C8.53703 13.6443 10.1016 13.0129 11.3007 11.9698L15.1889 15.8581C15.2812 15.9503 15.4053 16 15.5259 16C15.6466 16 15.7707 15.9539 15.863 15.8581C16.0475 15.6736 16.0475 15.3685 15.863 15.184ZM0.959207 6.82217C0.959207 3.5867 3.59158 0.957871 6.82351 0.957871C10.059 0.957871 12.6878 3.59024 12.6878 6.82217C12.6878 10.0541 10.059 12.69 6.82351 12.69C3.59158 12.69 0.959207 10.0576 0.959207 6.82217Z" fill="white"/>
+            <defs>
+            <clipPath id="clip0">
+            <rect width="16" height="16" fill="white"/>
+            </clipPath>
+            </defs>
+            </svg>
+
+      .header-nav-personal-info.header-nav__header-nav-personal-info.is-no-login-icons
+        a.header-nav-personal-info__fav(href='#')
+          <svg class="icon icon__favorite-btn icon_theme_grey">
+            <path d="M5.657 27.339a.5.5 0 0 1-.494-.586l1.55-9.03L.15 11.328a.502.502 0 0 1 .278-.855l9.067-1.317L13.551.94a.5.5 0 0 1 .898 0l4.055 8.216 9.067 1.317a.502.502 0 0 1 .278.855l-6.561 6.396 1.549 9.03a.503.503 0 0 1-.728.528L14 23.019l-8.11 4.263a.506.506 0 0 1-.233.057zm-4.079-16.02l6.022 5.87a.501.501 0 0 1 .144.444l-1.422 8.289 7.445-3.914a.499.499 0 0 1 .467 0l7.443 3.914-1.421-8.29a.502.502 0 0 1 .144-.443l6.022-5.87-8.322-1.21a.501.501 0 0 1-.378-.274L14 2.295l-3.722 7.54a.501.501 0 0 1-.378.275l-8.322 1.209z" fill="white"/>
+          </svg>
+          span.header-nav-personal-info__fav-counter 0
+
+        a.header-nav-personal-info__cart.header-nav-personal-info__cart_last(href='#')
+          <svg class="icon icon__cart icon_theme_grey">
+            <path d="M11.74 22.03a2.465 2.465 0 0 0-2.462 2.462 2.465 2.465 0 0 0 2.463 2.463 2.465 2.465 0 0 0 2.462-2.463 2.465 2.465 0 0 0-2.462-2.462zm0 3.55a1.089 1.089 0 0 1 0-2.175 1.089 1.089 0 0 1 0 2.175zm8.638-3.55a2.465 2.465 0 0 0-2.462 2.462 2.465 2.465 0 0 0 2.462 2.463 2.465 2.465 0 0 0 2.463-2.463 2.465 2.465 0 0 0-2.463-2.462zm0 3.55a1.089 1.089 0 0 1 0-2.175 1.089 1.089 0 0 1 0 2.175zm.606-16.515h-9.852a.687.687 0 1 0 0 1.375h9.852a.687.687 0 1 0 0-1.375zm-.535 3.57h-8.78a.687.687 0 1 0 0 1.375h8.78a.687.687 0 1 0 0-1.375z" fill="white"/>
+            <path d="M27.69 6.002a1.37 1.37 0 0 0-1.066-.507H5.21l-.432-2.1a1.377 1.377 0 0 0-.8-.983L.961 1.102a.687.687 0 1 0-.548 1.262l3.018 1.31L6.757 19.82a1.38 1.38 0 0 0 1.347 1.098h16.47a.687.687 0 1 0 0-1.375H8.104L7.7 17.579h17.002a1.38 1.38 0 0 0 1.347-1.098l1.923-9.333a1.37 1.37 0 0 0-.28-1.146zm-2.989 10.202H7.416L5.493 6.87h21.131l-1.923 9.334z" fill="white"/>
+          </svg>
+          span.header-nav-personal-info__cart-counter 0

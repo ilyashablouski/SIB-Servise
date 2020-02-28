@@ -1,0 +1,47 @@
+//-
+  Create list items 
+  listItem(text: str, className: str)
+
+mixin listItem(className, text)
+  li(class= className) #{text}
+
+  //-
+    Create product block
+    product(blocksQuantity: num)
+
+mixin productBlock(blocksQuantity)
+  - var startNumber = 1;
+    while startNumber <= blocksQuantity
+      .product-block.tab__product-block
+        .product-block__inner
+          .product-block__image
+            img(src='images/prod-img.jpg', alt='')
+          a.product-block__item-link(href='') Корпус&nbsp;редуктора&nbsp;GWS8
+
+        .product-block__inner  
+          span.product-block__stock В&nbsp;наличии         
+          //- Price container with counters
+          .product-price-container
+            //- Price
+            .product-price-item
+              span.product-price-item__price цена
+              .product-price-item__inner
+                span.product-price-item__cost 120.17
+                //- Product counter 
+                form.counter.counter_sm(action='#', name='counter-below')
+                  button.button.button-minus.button_sm
+                  input.input-quantity.input-quantity_sm(type='number', step='1', min='1', value='1')
+                  button.button.button-plus.button_sm
+
+            //- Price
+            .product-price-item
+              span.product-price-item__price цена&nbsp;2
+              .product-price-item__inner
+                span.product-price-item__cost 40.15
+                //- Product counter 
+                form.counter.counter_sm(action='#', name='counter-below')
+                  button.button.button-minus.button_sm
+                  input.input-quantity.input-quantity_sm(type='number', step='1', min='1', value='1')
+                  button.button.button-plus.button_sm
+
+        - startNumber++

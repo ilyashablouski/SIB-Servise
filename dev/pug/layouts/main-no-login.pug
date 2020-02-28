@@ -1,0 +1,16 @@
+include ../modules/mixins.pug
+block variables
+
+doctype html
+html(lang='en')
+  head
+    title= pageTitle
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    link(rel='stylesheet', href=link)
+  body.body
+    include ../svg.html
+    include ../modules/header-no-login.pug
+    block content
+    include ../modules/footer.pug
+    block scripts

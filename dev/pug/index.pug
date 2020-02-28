@@ -1,0 +1,81 @@
+extends layouts/main-no-login.pug
+
+block variables
+  - var pageTitle = 'Страница товара';
+  - var scriptSrc = 'js/script.js';
+  - var link = 'css/styles.css';
+
+block content
+  .content
+    main.main.content__main
+      .wrapper
+        //- Product section
+        section.product-section
+          .breadcrumb.product-section__breadcrumb
+            a.breadcrumb__item(href='#') Главная
+            a.breadcrumb__item(href='#') Поиск&nbsp;запчастей&nbsp;по&nbsp;каталогу
+            a.breadcrumb__item(href='#') BOSCH
+
+          //- Product block
+          .product-block.product-section__product-block
+            .product-block__title
+              h4.h4 Артикул: 1603300016
+              span.product-block-info__text 1603300016 шестигранная гайка
+
+            .product-block-img.product-block__product-block-img
+              //- Small images
+              .product-block-img__miniature
+                .block-img.block-img_sm
+                  img(src='images/product-block-img-1.jpg', alt='Miniature 1')
+                .block-img.block-img_sm
+                  img(src='images/product-block-img-1.jpg', alt='Miniature 2')
+
+              //- Large image
+              .block-img.block-img_lg
+                img(src='images/product-block-img-1.jpg', alt='Block image')
+
+            .product-block-info.product-block__product-block-info
+              .product-block-info__title
+                h4.h4 Артикул: 1603300016
+                span.product-block-info__text 1603300016 шестигранная гайка
+
+              .price-block.price-block_underline
+                span.price-block__title Цена:
+                span.price-block__cost 2,58&nbsp;руб.
+                //- Product counter
+                form.counter.counter-price-block(action='#', name='counter-above')
+                  button.button.button-minus.counter-price-block__button
+                  input.input-quantity.counter-price-block__input-quantity(type='number', step='1', min='1', value='1')
+                  button.button.button-plus.counter-price-block__button
+
+              .price-block
+                span.price-block__title Цена&nbsp;2:
+                span.price-block__cost 1,12&nbsp;руб.
+                //- Product counter 
+                form.counter.counter-price-block(action='#', name='counter-above')
+                  button.button.button-minus.counter-price-block__button
+                  input.input-quantity.counter-price-block__input-quantity(type='number', step='1', min='1', value='1')
+                  button.button.button-plus.counter-price-block__button
+
+      //- Tabs section
+      section.tabs-section.main__tabs-section
+        .wrapper
+          .tabs
+            //- .tabs-buttons
+            input.tabs-button#tab1(type='radio', name='tab-group', checked)
+            label.tab__title(for='tab1') Изделия
+
+            input.tabs-button#tab2(type='radio', name='tab-group')
+            label.tab__title.is-next-tab(for='tab2') Аналоги
+
+            //- Products tab
+            .tab.tab_first
+              .tab__content
+                +productBlock(6)
+
+            //- Analogs tab
+            .tab.tab_second
+              .tab__content
+                +productBlock(12)
+block scripts
+  script(src=scriptSrc)
