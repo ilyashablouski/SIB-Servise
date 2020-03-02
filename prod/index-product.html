@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Страница товара</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body class="body"><svg width="0" height="0" class="hidden">
+  <symbol viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg" id="burger-btn">
+    <rect width="20" height="2" rx="1" fill="#fff"></rect>
+    <rect y="6" width="20" height="2" rx="1" fill="#fff"></rect>
+    <rect y="12" width="20" height="2" rx="1" fill="#fff"></rect>
+  </symbol>
+  <symbol viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" id="info">
+    <path
+      d="M10 20c5.514 0 10-4.486 10-10S15.514 0 10 0 0 4.486 0 10s4.486 10 10 10zM10 .77c5.09 0 9.23 4.14 9.23 9.23 0 5.09-4.14 9.23-9.23 9.23C4.91 19.23.77 15.09.77 10 .77 4.91 4.91.77 10 .77z"
+      fill="#fff"></path>
+    <path
+      d="M9.027 4.952c-.017.535.375.963 1 .963.553 0 .946-.428.946-.963a.957.957 0 0 0-.981-.982c-.59 0-.965.428-.965.982zm1.75 11.066V7.38H9.205v8.64h1.57z"
+      fill="#fff"></path>
+  </symbol>
+</svg>
+    <header class="header">
+      <div class="header-nav">
+        <div class="wrapper">
+          <div class="header-nav__inner"><a class="header-nav-info first" href="#"><svg class="icon icon__info">
+<use xlink:href="#info"></use>
+</svg><span class="header-nav-info__text">Информация</span></a><a class="header-nav-catalog" href="#"><svg class="icon icon__burger-btn">
+<use xlink:href="#burger-btn"></use>
+</svg><span class="header-nav-catalog__text">Каталог</span></a><a class="header-nav-enter" href="#">Вход</a>
+            <div class="dropdown-block"><a class="dropdown-block__links" href="#">Каталог</a><a class="dropdown-block__links" href="#">Товары со скидкой</a><a class="dropdown-block__links" href="#">Новинки</a><a class="dropdown-block__links" href="#">Уценка %</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="wrapper">
+        <div class="header-sub">
+          <div class="logo header-sub__logo"><span class="logo__text">СИБ-сервис</span></div>
+          <div class="search search-header header-sub__search-header">
+            <form class="search__form" action="#" name="search-form">
+              <input class="search__input" type="search" placeholder="Название, артикул, производитель" required>
+              <button class="search__button" type="submit"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.863 15.184L11.9747 11.2958C13.0177 10.0967 13.6492 8.53215 13.6492 6.82217C13.6492 3.05809 10.5876 0 6.82706 0C3.06298 0 0.00488281 3.06164 0.00488281 6.82217C0.00488281 10.5827 3.06652 13.6443 6.82706 13.6443C8.53703 13.6443 10.1016 13.0129 11.3007 11.9698L15.1889 15.8581C15.2812 15.9503 15.4053 16 15.5259 16C15.6466 16 15.7707 15.9539 15.863 15.8581C16.0475 15.6736 16.0475 15.3685 15.863 15.184ZM0.959207 6.82217C0.959207 3.5867 3.59158 0.957871 6.82351 0.957871C10.059 0.957871 12.6878 3.59024 12.6878 6.82217C12.6878 10.0541 10.059 12.69 6.82351 12.69C3.59158 12.69 0.959207 10.0576 0.959207 6.82217Z" fill="white"/>
+<defs>
+<clipPath id="clip0">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>
+              </button>
+            </form>
+          </div>
+          <div class="header-nav-personal-info header-nav__header-nav-personal-info is-no-login-icons"><a class="header-nav-personal-info__fav" href="#"><svg class="icon icon__favorite-btn icon_theme_grey">
+<path d="M5.657 27.339a.5.5 0 0 1-.494-.586l1.55-9.03L.15 11.328a.502.502 0 0 1 .278-.855l9.067-1.317L13.551.94a.5.5 0 0 1 .898 0l4.055 8.216 9.067 1.317a.502.502 0 0 1 .278.855l-6.561 6.396 1.549 9.03a.503.503 0 0 1-.728.528L14 23.019l-8.11 4.263a.506.506 0 0 1-.233.057zm-4.079-16.02l6.022 5.87a.501.501 0 0 1 .144.444l-1.422 8.289 7.445-3.914a.499.499 0 0 1 .467 0l7.443 3.914-1.421-8.29a.502.502 0 0 1 .144-.443l6.022-5.87-8.322-1.21a.501.501 0 0 1-.378-.274L14 2.295l-3.722 7.54a.501.501 0 0 1-.378.275l-8.322 1.209z" fill="white"/>
+</svg><span class="header-nav-personal-info__fav-counter">0</span></a><a class="header-nav-personal-info__cart header-nav-personal-info__cart_last" href="#"><svg class="icon icon__cart icon_theme_grey">
+<path d="M11.74 22.03a2.465 2.465 0 0 0-2.462 2.462 2.465 2.465 0 0 0 2.463 2.463 2.465 2.465 0 0 0 2.462-2.463 2.465 2.465 0 0 0-2.462-2.462zm0 3.55a1.089 1.089 0 0 1 0-2.175 1.089 1.089 0 0 1 0 2.175zm8.638-3.55a2.465 2.465 0 0 0-2.462 2.462 2.465 2.465 0 0 0 2.462 2.463 2.465 2.465 0 0 0 2.463-2.463 2.465 2.465 0 0 0-2.463-2.462zm0 3.55a1.089 1.089 0 0 1 0-2.175 1.089 1.089 0 0 1 0 2.175zm.606-16.515h-9.852a.687.687 0 1 0 0 1.375h9.852a.687.687 0 1 0 0-1.375zm-.535 3.57h-8.78a.687.687 0 1 0 0 1.375h8.78a.687.687 0 1 0 0-1.375z" fill="white"/>
+<path d="M27.69 6.002a1.37 1.37 0 0 0-1.066-.507H5.21l-.432-2.1a1.377 1.377 0 0 0-.8-.983L.961 1.102a.687.687 0 1 0-.548 1.262l3.018 1.31L6.757 19.82a1.38 1.38 0 0 0 1.347 1.098h16.47a.687.687 0 1 0 0-1.375H8.104L7.7 17.579h17.002a1.38 1.38 0 0 0 1.347-1.098l1.923-9.333a1.37 1.37 0 0 0-.28-1.146zm-2.989 10.202H7.416L5.493 6.87h21.131l-1.923 9.334z" fill="white"/>
+</svg><span class="header-nav-personal-info__cart-counter">0</span></a></div>
+        </div>
+      </div>
+    </header>
+    <div class="content">
+      <main class="main content__main">
+        <div class="wrapper">
+          <section class="product-section">
+            <div class="breadcrumb product-section__breadcrumb"><a class="breadcrumb__item" href="#">Главная</a><a class="breadcrumb__item" href="#">Поиск&nbsp;запчастей&nbsp;по&nbsp;каталогу</a><a class="breadcrumb__item" href="#">BOSCH</a></div>
+            <div class="product-block product-section__product-block">
+              <div class="product-block__title">
+                <h4 class="h4">Артикул: 1603300016</h4><span class="product-block-info__text">1603300016 шестигранная гайка</span>
+              </div>
+              <div class="product-block-img product-block__product-block-img">
+                <div class="product-block-img__miniature">
+                  <div class="block-img block-img_sm"><img src="images/product-block-img-1.jpg" alt="Miniature 1"></div>
+                  <div class="block-img block-img_sm"><img src="images/product-block-img-1.jpg" alt="Miniature 2"></div>
+                </div>
+                <div class="block-img block-img_lg"><img src="images/product-block-img-1.jpg" alt="Block image"></div>
+              </div>
+              <div class="product-block-info product-block__product-block-info">
+                <div class="product-block-info__title">
+                  <h4 class="h4">Артикул: 1603300016</h4><span class="product-block-info__text">1603300016 шестигранная гайка</span>
+                </div>
+                <div class="price-block price-block_underline"><span class="price-block__title">Цена:</span><span class="price-block__cost">2,58&nbsp;руб.</span>
+                  <form class="counter counter-price-block" action="#" name="counter-above">
+                    <button class="button button-minus counter-price-block__button"></button>
+                    <input class="input-quantity counter-price-block__input-quantity" type="number" step="1" min="1" value="1">
+                    <button class="button button-plus counter-price-block__button"></button>
+                  </form>
+                </div>
+                <div class="price-block"><span class="price-block__title">Цена&nbsp;2:</span><span class="price-block__cost">1,12&nbsp;руб.</span>
+                  <form class="counter counter-price-block" action="#" name="counter-above">
+                    <button class="button button-minus counter-price-block__button"></button>
+                    <input class="input-quantity counter-price-block__input-quantity" type="number" step="1" min="1" value="1">
+                    <button class="button button-plus counter-price-block__button"></button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <section class="tabs-section main__tabs-section">
+          <div class="wrapper">
+            <div class="tabs">
+              <input class="tabs-button" id="tab1" type="radio" name="tab-group" checked>
+              <label class="tab__title" for="tab1">Изделия</label>
+              <input class="tabs-button" id="tab2" type="radio" name="tab-group">
+              <label class="tab__title is-next-tab" for="tab2">Аналоги</label>
+              <div class="tab tab_first">
+                <div class="tab__content">
+                  <div class="product-block tab__product-block">
+                    <div class="product-block__inner">
+                      <div class="product-block__image"><img src="images/prod-img.jpg" alt=""/></div><a class="product-block__item-link" href="">Корпус&nbsp;редуктора&nbsp;GWS8</a>
+                    </div>
+                    <div class="product-block__inner"> <span class="product-block__stock">В&nbsp;наличии         </span>
+                      <div class="product-price-container">
+                        <div class="product-price-item"><span class="product-price-item__price">цена</span>
+                          <div class="product-price-item__inner"><span class="product-price-item__cost">120.17</span>
+                            <form class="counter counter_sm" action="#" name="counter-below">
+                              <button class="button button-minus button_sm"></button>
+                              <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                              <button class="button button-plus button_sm"></button>
+                            </form>
+                          </div>
+                        </div>
+                        <div class="product-price-item"><span class="product-price-item__price">цена&nbsp;2</span>
+                          <div class="product-price-item__inner"><span class="product-price-item__cost">40.15</span>
+                            <form class="counter counter_sm" action="#" name="counter-below">
+                              <button class="button button-minus button_sm"></button>
+                              <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                              <button class="button button-plus button_sm"></button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-block tab__product-block">
+                    <div class="product-block__inner">
+                      <div class="product-block__image"><img src="images/prod-img.jpg" alt=""/></div><a class="product-block__item-link" href="">Корпус&nbsp;редуктора&nbsp;GWS8</a>
+                    </div>
+                    <div class="product-block__inner"> <span class="product-block__stock">В&nbsp;наличии         </span>
+                      <div class="product-price-container">
+                        <div class="product-price-item"><span class="product-price-item__price">цена</span>
+                          <div class="product-price-item__inner"><span class="product-price-item__cost">120.17</span>
+                            <form class="counter counter_sm" action="#" name="counter-below">
+                              <button class="button button-minus button_sm"></button>
+                              <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                              <button class="button button-plus button_sm"></button>
+                            </form>
+                          </div>
+                        </div>
+                        <div class="product-price-item"><span class="product-price-item__price">цена&nbsp;2</span>
+                          <div class="product-price-item__inner"><span class="product-price-item__cost">40.15</span>
+                            <form class="counter counter_sm" action="#" name="counter-below">
+                              <button class="button button-minus button_sm"></button>
+                              <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                              <button class="button button-plus button_sm"></button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-block tab__product-block">
+                    <div class="product-block__inner">
+                      <div class="product-block__image"><img src="images/prod-img.jpg" alt=""/></div><a class="product-block__item-link" href="">Корпус&nbsp;редуктора&nbsp;GWS8</a>
+                    </div>
+                    <div class="product-block__inner"> <span class="product-block__stock">В&nbsp;наличии         </span>
+                      <div class="product-price-container">
+                        <div class="product-price-item"><span class="product-price-item__price">цена</span>
+                          <div class="product-price-item__inner"><span class="product-price-item__cost">120.17</span>
+                            <form class="counter counter_sm" action="#" name="counter-below">
+                              <button class="button button-minus button_sm"></button>
+                              <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                              <button class="button button-plus button_sm"></button>
+                            </form>
+                          </div>
+                        </div>
+                        <div class="product-price-item"><span class="product-price-item__price">цена&nbsp;2</span>
+                          <div class="product-price-item__inner"><span class="product-price-item__cost">40.15</span>
+                            <form class="counter counter_sm" action="#" name="counter-below">
+                              <button class="button button-minus button_sm"></button>
+                              <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                              <button class="button button-plus button_sm"></button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-block tab__product-block">
+                    <div class="product-block__inner">
+                      <div class="product-block__image"><img src="images/prod-img.jpg" alt=""/></div><a class="product-block__item-link" href="">Корпус&nbsp;редуктора&nbsp;GWS8</a>
+                    </div>
+                    <div class="product-block__inner"> <span class="product-block__stock">В&nbsp;наличии         </span>
+                      <div class="product-price-container">
+                        <div class="product-price-item"><span class="product-price-item__price">цена</span>
+                          <div class="product-price-item__inner"><span class="product-price-item__cost">120.17</span>
+                            <form class="counter counter_sm" action="#" name="counter-below">
+                              <button class="button button-minus button_sm"></button>
+                              <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                              <button class="button button-plus button_sm"></button>
+                            </form>
+                          </div>
+                        </div>
+                        <div class="product-price-item"><span class="product-price-item__price">цена&nbsp;2</span>
+                          <div class="product-price-item__inner"><span class="product-price-item__cost">40.15</span>
+                            <form class="counter counter_sm" action="#" name="counter-below">
+                              <button class="button button-minus button_sm"></button>
+                              <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                              <button class="button button-plus button_sm"></button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-block tab__product-block">
+                    <div class="product-block__inner">
+                      <div class="product-block__image"><img src="images/prod-img.jpg" alt=""/></div><a class="product-block__item-link" href="">Корпус&nbsp;редуктора&nbsp;GWS8</a>
+                    </div>
+                    <div class="product-block__inner"> <span class="product-block__stock">В&nbsp;наличии         </span>
+                      <div class="product-price-container">
+                        <div class="product-price-item"><span class="product-price-item__price">цена</span>
+                          <div class="product-price-item__inner"><span class="product-price-item__cost">120.17</span>
+                            <form class="counter counter_sm" action="#" name="counter-below">
+                              <button class="button button-minus button_sm"></button>
+                              <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                              <button class="button button-plus button_sm"></button>
+                            </form>
+                          </div>
+                        </div>
+                        <div class="product-price-item"><span class="product-price-item__price">цена&nbsp;2</span>
+                          <div class="product-price-item__inner"><span class="product-price-item__cost">40.15</span>
+                            <form class="counter counter_sm" action="#" name="counter-below">
+                              <button class="button button-minus button_sm"></button>
+                              <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                              <button class="button button-plus button_sm"></button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-block tab__product-block">
+                    <div class="product-block__inner">
+                      <div class="product-block__image"><img src="images/prod-img.jpg" alt=""/></div><a class="product-block__item-link" href="">Корпус&nbsp;редуктора&nbsp;GWS8</a>
+                    </div>
+                    <div class="product-block__inner"> <span class="product-block__stock">В&nbsp;наличии         </span>
+                      <div class="product-price-container">
+                        <div class="product-price-item"><span class="product-price-item__price">цена</span>
+                          <div class="product-price-item__inner"><span class="product-price-item__cost">120.17</span>
+                            <form class="counter counter_sm" action="#" name="counter-below">
+                              <button class="button button-minus button_sm"></button>
+                              <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                              <button class="button button-plus button_sm"></button>
+                            </form>
+                          </div>
+                        </div>
+                        <div class="product-price-item"><span class="product-price-item__price">цена&nbsp;2</span>
+                          <div class="product-price-item__inner"><span class="product-price-item__cost">40.15</span>
+                            <form class="counter counter_sm" action="#" name="counter-below">
+                              <button class="button button-minus button_sm"></button>
+                              <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                              <button class="button button-plus button_sm"></button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab tab_second">
+                <div class="tab__content">
+                  <div class="product-block tab__product-block">
+                    <div class="product-block__inner">
+                      <div class="product-block__image"><img src="images/prod-img.jpg" alt=""/></div><a class="product-block__item-link" href="">Корпус&nbsp;редуктора&nbsp;GWS8</a>
+                    </div>
+                    <div class="product-block__inner"> <span class="product-block__stock">В&nbsp;наличии         </span>
+                      <div class="product-price-container">
+                        <div class="product-price-item"><span class="product-price-item__price">цена</span>
+                          <div class="product-price-item__inner"><span class="product-price-item__cost">120.17</span>
+                            <form class="counter counter_sm" action="#" name="counter-below">
+                              <button class="button button-minus button_sm"></button>
+                              <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                              <button class="button button-plus button_sm"></button>
+                            </form>
+                          </div>
+                        </div>
+                        <div class="product-price-item"><span class="product-price-item__price">цена&nbsp;2</span>
+                          <div class="product-price-item__inner"><span class="product-price-item__cost">40.15</span>
+                            <form class="counter counter_sm" action="#" name="counter-below">
+                              <button class="button button-minus button_sm"></button>
+                              <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                              <button class="button button-plus button_sm"></button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-block tab__product-block">
+                    <div class="product-block__inner">
+                      <div class="product-block__image"><img src="images/prod-img.jpg" alt=""/></div><a class="product-block__item-link" href="">Корпус&nbsp;редуктора&nbsp;GWS8</a>
+                    </div>
+                    <div class="product-block__inner"> <span class="product-block__stock">В&nbsp;наличии         </span>
+                      <div class="product-price-container">
+                        <div class="product-price-item"><span class="product-price-item__price">цена</span>
+                          <div class="product-price-item__inner"><span class="product-price-item__cost">120.17</span>
+                            <form class="counter counter_sm" action="#" name="counter-below">
+                              <button class="button button-minus button_sm"></button>
+                              <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                              <button class="button button-plus button_sm"></button>
+                            </form>
+                          </div>
+                        </div>
+                        <div class="product-price-item"><span class="product-price-item__price">цена&nbsp;2</span>
+                          <div class="product-price-item__inner"><span class="product-price-item__cost">40.15</span>
+                            <form class="counter counter_sm" action="#" name="counter-below">
+                              <button class="button button-minus button_sm"></button>
+                              <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                              <button class="button button-plus button_sm"></button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-block tab__product-block">
+                    <div class="product-block__inner">
+                      <div class="product-block__image"><img src="images/prod-img.jpg" alt=""/></div><a class="product-block__item-link" href="">Корпус&nbsp;редуктора&nbsp;GWS8</a>
+                    </div>
+                    <div class="product-block__inner"> <span class="product-block__stock">В&nbsp;наличии         </span>
+                      <div class="product-price-container">
+                        <div class="product-price-item"><span class="product-price-item__price">цена</span>
+                          <div class="product-price-item__inner"><span class="product-price-item__cost">120.17</span>
+                            <form class="counter counter_sm" action="#" name="counter-below">
+                              <button class="button button-minus button_sm"></button>
+                              <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                              <button class="button button-plus button_sm"></button>
+                            </form>
+                          </div>
+                        </div>
+                        <div class="product-price-item"><span class="product-price-item__price">цена&nbsp;2</span>
+                          <div class="product-price-item__inner"><span class="product-price-item__cost">40.15</span>
+                            <form class="counter counter_sm" action="#" name="counter-below">
+                              <button class="button button-minus button_sm"></button>
+                              <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                              <button class="button button-plus button_sm"></button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-block tab__product-block">
+                    <div class="product-block__inner">
+                      <div class="product-block__image"><img src="images/prod-img.jpg" alt=""/></div><a class="product-block__item-link" href="">Корпус&nbsp;редуктора&nbsp;GWS8</a>
+                    </div>
+                    <div class="product-block__inner"> <span class="product-block__stock">В&nbsp;наличии         </span>
+                      <div class="product-price-container">
+                        <div class="product-price-item"><span class="product-price-item__price">цена</span>
+                          <div class="product-price-item__inner"><span class="product-price-item__cost">120.17</span>
+                            <form class="counter counter_sm" action="#" name="counter-below">
+                              <button class="button button-minus button_sm"></button>
+                              <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                              <button class="button button-plus button_sm"></button>
+                            </form>
+                          </div>
+                        </div>
+                        <div class="product-price-item"><span class="product-price-item__price">цена&nbsp;2</span>
+                          <div class="product-price-item__inner"><span class="product-price-item__cost">40.15</span>
+                            <form class="counter counter_sm" action="#" name="counter-below">
+                              <button class="button button-minus button_sm"></button>
+                              <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                              <button class="button button-plus button_sm"></button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-block tab__product-block">
+                    <div class="product-block__inner">
+                      <div class="product-block__image"><img src="images/prod-img.jpg" alt=""/></div><a class="product-block__item-link" href="">Корпус&nbsp;редуктора&nbsp;GWS8</a>
+                    </div>
+                    <div class="product-block__inner"> <span class="product-block__stock">В&nbsp;наличии         </span>
+                      <div class="product-price-container">
+                        <div class="product-price-item"><span class="product-price-item__price">цена</span>
+                          <div class="product-price-item__inner"><span class="product-price-item__cost">120.17</span>
+                            <form class="counter counter_sm" action="#" name="counter-below">
+                              <button class="button button-minus button_sm"></button>
+                              <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                              <button class="button button-plus button_sm"></button>
+                            </form>
+                          </div>
+                        </div>
+                        <div class="product-price-item"><span class="product-price-item__price">цена&nbsp;2</span>
+                          <div class="product-price-item__inner"><span class="product-price-item__cost">40.15</span>
+                            <form class="counter counter_sm" action="#" name="counter-below">
+                              <button class="button button-minus button_sm"></button>
+                              <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                              <button class="button button-plus button_sm"></button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-block tab__product-block">
+                    <div class="product-block__inner">
+                      <div class="product-block__image"><img src="images/prod-img.jpg" alt=""/></div><a class="product-block__item-link" href="">Корпус&nbsp;редуктора&nbsp;GWS8</a>
+                    </div>
+                    <div class="product-block__inner"> <span class="product-block__stock">В&nbsp;наличии         </span>
+                      <div class="product-price-container">
+                        <div class="product-price-item"><span class="product-price-item__price">цена</span>
+                          <div class="product-price-item__inner"><span class="product-price-item__cost">120.17</span>
+                            <form class="counter counter_sm" action="#" name="counter-below">
+                              <button class="button button-minus button_sm"></button>
+                              <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                              <button class="button button-plus button_sm"></button>
+                            </form>
+                          </div>
+                        </div>
+                        <div class="product-price-item"><span class="product-price-item__price">цена&nbsp;2</span>
+                          <div class="product-price-item__inner"><span class="product-price-item__cost">40.15</span>
+                            <form class="counter counter_sm" action="#" name="counter-below">
+                              <button class="button button-minus button_sm"></button>
+                              <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                              <button class="button button-plus button_sm"></button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-block tab__product-block">
+                    <div class="product-block__inner">
+                      <div class="product-block__image"><img src="images/prod-img.jpg" alt=""/></div><a class="product-block__item-link" href="">Корпус&nbsp;редуктора&nbsp;GWS8</a>
+                    </div>
+                    <div class="product-block__inner"> <span class="product-block__stock">В&nbsp;наличии         </span>
+                      <div class="product-price-container">
+                        <div class="product-price-item"><span class="product-price-item__price">цена</span>
+                          <div class="product-price-item__inner"><span class="product-price-item__cost">120.17</span>
+                            <form class="counter counter_sm" action="#" name="counter-below">
+                              <button class="button button-minus button_sm"></button>
+                              <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                              <button class="button button-plus button_sm"></button>
+                            </form>
+                          </div>
+                        </div>
+                        <div class="product-price-item"><span class="product-price-item__price">цена&nbsp;2</span>
+                          <div class="product-price-item__inner"><span class="product-price-item__cost">40.15</span>
+                            <form class="counter counter_sm" action="#" name="counter-below">
+                              <button class="button button-minus button_sm"></button>
+                              <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                              <button class="button button-plus button_sm"></button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-block tab__product-block">
+                    <div class="product-block__inner">
+                      <div class="product-block__image"><img src="images/prod-img.jpg" alt=""/></div><a class="product-block__item-link" href="">Корпус&nbsp;редуктора&nbsp;GWS8</a>
+                    </div>
+                    <div class="product-block__inner"> <span class="product-block__stock">В&nbsp;наличии         </span>
+                      <div class="product-price-container">
+                        <div class="product-price-item"><span class="product-price-item__price">цена</span>
+                          <div class="product-price-item__inner"><span class="product-price-item__cost">120.17</span>
+                            <form class="counter counter_sm" action="#" name="counter-below">
+                              <button class="button button-minus button_sm"></button>
+                              <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                              <button class="button button-plus button_sm"></button>
+                            </form>
+                          </div>
+                        </div>
+                        <div class="product-price-item"><span class="product-price-item__price">цена&nbsp;2</span>
+                          <div class="product-price-item__inner"><span class="product-price-item__cost">40.15</span>
+                            <form class="counter counter_sm" action="#" name="counter-below">
+                              <button class="button button-minus button_sm"></button>
+                              <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                              <button class="button button-plus button_sm"></button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-block tab__product-block">
+                    <div class="product-block__inner">
+                      <div class="product-block__image"><img src="images/prod-img.jpg" alt=""/></div><a class="product-block__item-link" href="">Корпус&nbsp;редуктора&nbsp;GWS8</a>
+                    </div>
+                    <div class="product-block__inner"> <span class="product-block__stock">В&nbsp;наличии         </span>
+                      <div class="product-price-container">
+                        <div class="product-price-item"><span class="product-price-item__price">цена</span>
+                          <div class="product-price-item__inner"><span class="product-price-item__cost">120.17</span>
+                            <form class="counter counter_sm" action="#" name="counter-below">
+                              <button class="button button-minus button_sm"></button>
+                              <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                              <button class="button button-plus button_sm"></button>
+                            </form>
+                          </div>
+                        </div>
+                        <div class="product-price-item"><span class="product-price-item__price">цена&nbsp;2</span>
+                          <div class="product-price-item__inner"><span class="product-price-item__cost">40.15</span>
+                            <form class="counter counter_sm" action="#" name="counter-below">
+                              <button class="button button-minus button_sm"></button>
+                              <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                              <button class="button button-plus button_sm"></button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-block tab__product-block">
+                    <div class="product-block__inner">
+                      <div class="product-block__image"><img src="images/prod-img.jpg" alt=""/></div><a class="product-block__item-link" href="">Корпус&nbsp;редуктора&nbsp;GWS8</a>
+                    </div>
+                    <div class="product-block__inner"> <span class="product-block__stock">В&nbsp;наличии         </span>
+                      <div class="product-price-container">
+                        <div class="product-price-item"><span class="product-price-item__price">цена</span>
+                          <div class="product-price-item__inner"><span class="product-price-item__cost">120.17</span>
+                            <form class="counter counter_sm" action="#" name="counter-below">
+                              <button class="button button-minus button_sm"></button>
+                              <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                              <button class="button button-plus button_sm"></button>
+                            </form>
+                          </div>
+                        </div>
+                        <div class="product-price-item"><span class="product-price-item__price">цена&nbsp;2</span>
+                          <div class="product-price-item__inner"><span class="product-price-item__cost">40.15</span>
+                            <form class="counter counter_sm" action="#" name="counter-below">
+                              <button class="button button-minus button_sm"></button>
+                              <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                              <button class="button button-plus button_sm"></button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-block tab__product-block">
+                    <div class="product-block__inner">
+                      <div class="product-block__image"><img src="images/prod-img.jpg" alt=""/></div><a class="product-block__item-link" href="">Корпус&nbsp;редуктора&nbsp;GWS8</a>
+                    </div>
+                    <div class="product-block__inner"> <span class="product-block__stock">В&nbsp;наличии         </span>
+                      <div class="product-price-container">
+                        <div class="product-price-item"><span class="product-price-item__price">цена</span>
+                          <div class="product-price-item__inner"><span class="product-price-item__cost">120.17</span>
+                            <form class="counter counter_sm" action="#" name="counter-below">
+                              <button class="button button-minus button_sm"></button>
+                              <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                              <button class="button button-plus button_sm"></button>
+                            </form>
+                          </div>
+                        </div>
+                        <div class="product-price-item"><span class="product-price-item__price">цена&nbsp;2</span>
+                          <div class="product-price-item__inner"><span class="product-price-item__cost">40.15</span>
+                            <form class="counter counter_sm" action="#" name="counter-below">
+                              <button class="button button-minus button_sm"></button>
+                              <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                              <button class="button button-plus button_sm"></button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="product-block tab__product-block">
+                    <div class="product-block__inner">
+                      <div class="product-block__image"><img src="images/prod-img.jpg" alt=""/></div><a class="product-block__item-link" href="">Корпус&nbsp;редуктора&nbsp;GWS8</a>
+                    </div>
+                    <div class="product-block__inner"> <span class="product-block__stock">В&nbsp;наличии         </span>
+                      <div class="product-price-container">
+                        <div class="product-price-item"><span class="product-price-item__price">цена</span>
+                          <div class="product-price-item__inner"><span class="product-price-item__cost">120.17</span>
+                            <form class="counter counter_sm" action="#" name="counter-below">
+                              <button class="button button-minus button_sm"></button>
+                              <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                              <button class="button button-plus button_sm"></button>
+                            </form>
+                          </div>
+                        </div>
+                        <div class="product-price-item"><span class="product-price-item__price">цена&nbsp;2</span>
+                          <div class="product-price-item__inner"><span class="product-price-item__cost">40.15</span>
+                            <form class="counter counter_sm" action="#" name="counter-below">
+                              <button class="button button-minus button_sm"></button>
+                              <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                              <button class="button button-plus button_sm"></button>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <footer class="footer body__footer">
+      <div class="wrapper">
+        <div class="footer__inner">
+          <section class="footer-nav footer__footer-nav">
+            <ul class="footer-nav-list"><a class="footer-nav-list__link" href="#">
+                <li class="footer-nav-list__item">Главная</li></a><a class="footer-nav-list__link" href="#">
+                <li class="footer-nav-list__item">Дилерам</li></a><a class="footer-nav-list__link" href="#">
+                <li class="footer-nav-list__item">О компании</li></a><a class="footer-nav-list__link" href="#">
+                <li class="footer-nav-list__item">Сервис-центры</li></a><a class="footer-nav-list__link" href="#">
+                <li class="footer-nav-list__item">Акции</li></a><a class="footer-nav-list__link" href="#">
+                <li class="footer-nav-list__item">Контакты</li></a><a class="footer-nav-list__link footer-nav-list__link_last" href="#">
+                <li class="footer-nav-list__item">Инструкция</li></a></ul>
+          </section>
+          <section class="phone-wholesale footer__phone-wholesale"><span class="phone-wholesale__title">Оптовые&nbsp;продажи:</span><a class="phone-wholesale__link" href="tel:+375291761767">+375 29 176-176-7</a><a class="phone-wholesale__link" href="tel:+375296202045">+375 29 620-20-45</a><a class="phone-wholesale__link" href="tel:+375445552084">+375 44 555-20-84</a></section>
+          <section class="phone-accounting footer__phone-accounting"><span class="phone-accounting__title">Бухгалтерия</span><a class="phone-accounting__link" href="tel:+375172244002">+375 17 224-40-02</a></section>
+          <section class="phone-sale footer__phone-sale"><span class="phone-sale__title">Отдел&nbsp;продаж</span><a class="phone-sale__link" href="tel:+375172244001">+375 17 224-40-01</a></section>
+          <section class="copyright footer__copyright"><span>СИБ-инструмент<br> © 2017 </span><br><span>Информация, представленная на сайте не является договором публичной оферты.</span></section>
+        </div>
+      </div>
+    </footer>
+    <script src="js/script.js"></script>
+  </body>
+</html>

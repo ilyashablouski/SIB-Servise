@@ -246,6 +246,18 @@ h4.h4 {
   color: #545252;
 }
 
+h5.h5 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+h6.h6 {
+  font-size: 13px;
+  font-weight: 600;
+  color: #545252;
+}
+
 .wrapper {
   .wrapper();
 }
@@ -270,12 +282,14 @@ h4.h4 {
       justify-content: flex-start;
       align-items: center;
       height: 54px;
-
-      a {
-        color: #ffffff;
-      }
     }
   }
+}
+
+.header-nav-info,
+.header-nav-catalog,
+.header-nav-enter {
+  color: #ffffff;
 }
 
 .header-nav-info,
@@ -314,7 +328,27 @@ h4.h4 {
   }
 }
 
-.header-nav-info {
+.header-nav-info,
+.header-nav-catalog {
+  position: relative;
+}
+
+.header-nav-info,
+.header-nav-catalog {
+  &:after {
+    content: '';
+    position: absolute;
+    right: -15px;
+    top: 50%;
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 5.5px 0px 5.5px;
+    border-color: #FFFFFF transparent transparent transparent;
+
+  }
+
   .xxs-block( {
       margin-right: 0;
     }
@@ -351,7 +385,7 @@ h4.h4 {
   &__fav {
     position: relative;
     top: 2px;
-    margin-right: 2.5rem;
+    margin-right: 25px;
     font-size: 10px;
 
   }
@@ -369,13 +403,23 @@ h4.h4 {
   }
 }
 
+.header-nav-enter {
+  margin-left: auto;
+  padding: 0.4rem 2.4rem 0.6rem;
+  display: inline-block;
+  border: 1px solid #FFFFFF;
+  border-radius: 2px;
+}
+
 .is-no-login-icons {
   margin-left: 3.4rem;
 
-  .xs-block({
-    order: 1;
-    margin-left: auto;
-  });
+  .xs-block( {
+      order: 1;
+      margin-left: auto;
+    }
+
+  );
 }
 
 .header-nav-personal-info__fav-counter {
@@ -422,7 +466,7 @@ h4.h4 {
   }
 }
 
-.icon_theme_grey path{
+.icon_theme_grey path {
   fill: #555555;
 }
 
@@ -447,6 +491,26 @@ h4.h4 {
   );
 }
 
+.dropdown-block {
+  position: absolute;
+  padding: 1rem 2.2rem 1.4rem 1.4rem;
+  top: 44px;
+  background: #FFFFFF;
+  box-shadow: 2px 2px 4px rgba(105, 105, 105, 0.25);
+  z-index: 2;
+
+  &__links {
+
+    display: block;
+    font-size: 1.6rem;
+    color: #6D6D6D;
+  }
+}
+
+.dropdown-block__links:not(:last-child) {
+  margin-bottom: 0.8rem;
+}
+
 .logo {
   max-width: 194px;
 
@@ -457,15 +521,19 @@ h4.h4 {
     white-space: nowrap;
   }
 
-  .xs-block({
-    order: 0;
-  });
+  .xs-block( {
+      order: 0;
+    }
+
+  );
 }
 
 .search {
-  .xs-block({
-    order: 3;
-  });
+  .xs-block( {
+      order: 3;
+    }
+
+  );
 
   flex: 1 1 65%;
 
@@ -1646,9 +1714,14 @@ h4.h4 {
   margin-left: auto;
   font-size: 20px;
 
-  &_sm {
+  &_md {
     margin-left: 0;
     font-size: 18px;
+  }
+
+  &_sm {
+    margin-left: 0;
+    font-size: 16px;
   }
 }
 
@@ -1724,10 +1797,16 @@ h4.h4 {
   border-left: none;
   border-right: none;
 
-  &_sm {
+  &_md {
     width: 40px;
-    height: 22px;
+    height: 16px;
     font-size: 1.8rem;
+  }
+
+  &_sm {
+    width: 27px;
+    height: 16px;
+    font-size: 14px;
   }
 }
 
@@ -1778,7 +1857,7 @@ h4.h4 {
     }
   }
 
-  &_sm {
+  &_md {
     width: 23px;
     height: 24px;
 
@@ -1791,6 +1870,25 @@ h4.h4 {
       top: -1px;
       width: 10px;
       height: 1px;
+    }
+  }
+
+  &_sm {
+    width: 18px;
+    height: 18px;
+
+    &:before {
+      position: relative;
+      width: 9px;
+      height: 1px;
+      right: 2px;
+    }
+
+    &:after {
+      top: -1px;
+      width: 9px;
+      height: 1px;
+      right: 2px;
     }
   }
 }
@@ -1879,3 +1977,44 @@ input[type=radio] {
 }
 
 // End of tabs
+
+/* 
+ * 4. Scheme page
+**/
+
+.scheme-table {
+  box-sizing: border-box;
+  font-size: 10px;
+  color: #545252;
+  border: 1px solid #F2F1F1;
+
+  tr {
+    border: 0.5px solid #E8E8E8;
+  }
+
+  td {
+
+  }
+
+  &__header {
+    padding: 11px  0;
+    background: #F7F7F7;
+    border: 1px solid #F2F1F1;
+  }
+
+  &__number {}
+
+  &__article {}
+
+  &__dropdown {
+    &-link {
+      color: #545252;
+    }
+  }
+
+  &__storage {}
+
+  &__price {}
+
+  &__counter {}
+}

@@ -28,10 +28,10 @@ mixin productBlock(blocksQuantity)
               .product-price-item__inner
                 span.product-price-item__cost 120.17
                 //- Product counter 
-                form.counter.counter_sm(action='#', name='counter-below')
-                  button.button.button-minus.button_sm
-                  input.input-quantity.input-quantity_sm(type='number', step='1', min='1', value='1')
-                  button.button.button-plus.button_sm
+                form.counter.counter_md(action='#', name='counter-below')
+                  button.button.button-minus.button_md
+                  input.input-quantity.input-quantity_md(type='number', step='1', min='1', value='1')
+                  button.button.button-plus.button_md
 
             //- Price
             .product-price-item
@@ -39,9 +39,35 @@ mixin productBlock(blocksQuantity)
               .product-price-item__inner
                 span.product-price-item__cost 40.15
                 //- Product counter 
-                form.counter.counter_sm(action='#', name='counter-below')
-                  button.button.button-minus.button_sm
-                  input.input-quantity.input-quantity_sm(type='number', step='1', min='1', value='1')
-                  button.button.button-plus.button_sm
+                form.counter.counter_md(action='#', name='counter-below')
+                  button.button.button-minus.button_md
+                  input.input-quantity.input-quantity_md(type='number', step='1', min='1', value='1')
+                  button.button.button-plus.button_md
 
         - startNumber++
+
+//-
+  Create table item: row + data
+  tableItem(tableDataArray: array)
+
+mixin createTableItem(tableDataArray)
+  each obj, key in tableDataArray
+    tr.scheme-table__item
+      td.scheme-table__number= obj.number
+      td.scheme-table__article= obj.article
+      td.scheme-table__name= obj.name
+      td.scheme-table__dropdown
+        a.scheme-table__dropdown-link(href='#')= obj.dropdown
+      td.scheme-table__storage
+        span= obj.storage
+      td.scheme-table__price
+        if obj.price === true
+          span.scheme-table__price-value.scheme-table__price-value_blue 3.99
+        else
+          span.scheme-table__price-value нет в наличии
+      td.scheme-table__counter
+        //- Product counter
+        form.counter.counter_sm(action='#', name='counter-below')
+          button.button.button-minus.button_sm
+          input.input-quantity.input-quantity_sm(type='number', step='1', min='1', value='1')
+          button.button.button-plus.button_sm
