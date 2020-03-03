@@ -55,19 +55,28 @@ mixin createTableItem(tableDataArray)
     tr.scheme-table__item
       td.scheme-table__number= obj.number
       td.scheme-table__article= obj.article
-      td.scheme-table__name= obj.name
+      td.scheme-table__name
+        .scheme-table__inner= obj.name
       td.scheme-table__dropdown
-        a.scheme-table__dropdown-link(href='#')= obj.dropdown
+        i.min-photo
+          <svg class="min-photo__img" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8.23704 6.20008C8.92049 6.88352 8.92049 7.99159 8.23704 8.67503C7.5536 9.35847 6.44554 9.35847 5.76209 8.67503C5.07865 7.99159 5.07865 6.88352 5.76209 6.20008C6.44554 5.51664 7.5536 5.51664 8.23704 6.20008Z" fill="#3496C5"/>
+          <path d="M12.25 2.62494H11.0408L10.1654 0.874878H3.8338L2.95919 2.6258L1.75175 2.62795C0.789145 2.62967 0.00553173 3.41411 0.00470054 4.37715L0 11.3748C0 12.34 0.784875 13.1253 1.75006 13.1253H12.25C13.2152 13.1253 14 12.3404 14 11.3752V4.37497C14 3.40981 13.2151 2.62494 12.25 2.62494ZM6.99978 10.9377C5.06984 10.9377 3.49966 9.36751 3.49966 7.43757C3.49966 5.50763 5.06984 3.93745 6.99978 3.93745C8.92973 3.93745 10.4999 5.50763 10.4999 7.43757C10.4999 9.36751 8.92973 10.9377 6.99978 10.9377Z" fill="#3496C5"/>
+          </svg>
+        .pop-up
+          img.pop-up__img(src='images/popup-img.jpg', alt='Pop-up image')
+        if obj.dropdown
+          a.scheme-table__dropdown-link(href='#')= obj.dropdown
       td.scheme-table__storage
         span= obj.storage
       td.scheme-table__price
         if obj.price === true
           span.scheme-table__price-value.scheme-table__price-value_blue 3.99
         else
-          span.scheme-table__price-value нет в наличии
+          span.scheme-table__price-value нет<br>в наличии
       td.scheme-table__counter
         //- Product counter
         form.counter.counter_sm(action='#', name='counter-below')
-          button.button.button-minus.button_sm
+          button.button.button-minus.button_sm.button-minus_sm
           input.input-quantity.input-quantity_sm(type='number', step='1', min='1', value='1')
-          button.button.button-plus.button_sm
+          button.button.button-plus.button_sm.button-plus_sm

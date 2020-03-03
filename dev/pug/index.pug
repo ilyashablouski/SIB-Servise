@@ -27,36 +27,60 @@ block content
           .scheme-container
             .scheme-container__scheme
               .scheme-box
-                .scheme-box__header DPC 8132
+                .scheme-box__header
+                  span DPC 8132
                 .scheme-box__inner
-                  .scheme_img
+                  <i class="arrow arrow-left">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.87453 10L14.9995 1.87498V0L4.99951 10L14.9995 20V18.125L6.87453 10Z" fill="#656565"/>
+                    </svg>
+                  </i>
+                  .scheme-box__img
                     img(src='images/scheme.jpg', alt='Схема')
-            
+                  <i class="arrow arrow-right">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13.1255 10L5.00049 18.125V20L15.0005 10L5.00049 0V1.87498L13.1255 10Z" fill="#656565"/>
+                    </svg>
+                  </i>
             //- Scheme block description with table
             .scheme-container__description
               table.scheme-table
+              
                 tr.scheme-table__header
                   th 
-                    h6.h6 №
+                    h6.h6.scheme-table__header-number №
                   th 
-                    h6.h6 Артикул
+                    h6.h6.scheme-table__header-article Артикул
                   th 
-                    h6.h6 Наименование
-                  th(colspan='2')
-                    h6.h6 Склад
-                  th(colspan='2') 
-                    h6.h6 Цена
+                    h6.h6.scheme-table__header-name Наименование
+                  th(style='text-align: left')
+                  th
+                    h6.h6.scheme-table__header-storage Склад
+                  th(style='text-align: center;')
+                    h6.h6.scheme-table__header-price Цена
+                  th
                 +createTableItem(tableDataArray)
                 +createTableItem(tableDataArray)
                 +createTableItem(tableDataArray)
 
                 tr.scheme-table__header
-                  th(colspan='7')
+                  th(colspan='7', style='text-align: center;')
                     h6.h6 Лист В
                 +createTableItem(tableDataArray)
                 +createTableItem(tableDataArray)
                 +createTableItem(tableDataArray)
                 +createTableItem(tableDataArray)
 
+        section.text-section
+          p.additional-text.text-section__additional-text
+            | Но предприниматели в сети интернет, которые представляют собой яркий пример
+            | континентально-европейского типа политической культуры, будут объединены в целые
+            | кластеры себе подобных. Таким образом, постоянный количественный рост и сфера нашей
+            | активности позволяет оценить значение инновационных методов управления процессами.
+            | Задача организации, в особенности же экономическая повестка сегодняшнего дня влечет
+            | за собой процесс внедрения и модернизации новых принципов формирования материально-технической и кадровой базы. И нет сомнений,
+            | что активно развивающиеся страны третьего мира освещают чрезвычайно интересные особенности картины в целом, однако конкретные выводы,
+            | разумеется, превращены в посмешище, хотя само их существование приносит несомненную пользу обществу! Таким образом, социально-экономическое
+            | развитие предоставляет широкие возможности для переосмысления внешнеэкономических политик.
 block scripts
   script(src=scriptSrc)
