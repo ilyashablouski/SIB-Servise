@@ -4,50 +4,32 @@
 const infoButton = document.querySelector('.header-nav-info');
 // const catalogButton = document.querySelector('.header-nav-catalog');
 const photoIconButton = document.querySelector('.min-photo');
-// const dropdownBlock = document.querySelector('.dropdown-block');
+const dropdownBlock = document.querySelector('.dropdown-block');
 
 
-// // Define functions
+// Define functions
 /**
- * Open/close element through display (button and dropdown block
- * inside of common parent)
- *
- * @param {eventobject} target
+ * Open/close element through display
  */
-function openElement(target) {
-  console.log(target.parentElement);
-  // target.querySelector('.pop-up-js').classList.toggle('is-show');
+function openInfoElement() {
+  dropdownBlock.classList.toggle('is-show');
 }
 
 // DOM loaded
 window.addEventListener('DOMContentLoaded', () => {
   // Close pop-up if clicked other areas
-  FIXME:
-  // Проблема, в том, что кнопка infoButton входит в ту же область
-  // что и любая другая область, которая может закрывать элемент dropdownBlock
-  // которая данная кнопка открывает. Из-за этого происходит конфликт условий:
-  // 1) infoButton открывает/закрывает dropdownBlock.
-  // 2) Любая другая область + infoButton, кроме dropdownBlock прячет
-  // dropdownBlock по нажатию.
-  // $(document).mouseup(function(e) { // событие клика по веб-документу
-  //   const div = $('.is-hide'); // тут указываем class элемента
-  //   if (!div.is(e.target) && // если клик был не по нашему блоку
-  //     div.has(e.target).length === 0) { // и не по его дочерним элементам
-  //     div.hide(); // скрываем его
-  //   }
-
-  //   dropdownBlock.classList.toggle('is-hide');
-  // });
-
-  infoButton.addEventListener('click', (event) => {
-    const target = event.target;
-    openElement(target);
+  $(document).mouseup(function(e) { // событие клика по веб-документу
+    const div = $('.pop-up-js'); // тут указываем class элемента
+    if (!div.is(e.target) && // если клик был не по нашему блоку
+      div.has(e.target).length === 0) { // и не по его дочерним элементам
+      dropdownBlock.classList.remove('is-show'); // скрываем его
+      console.log('Yes');
+    }
   });
 
-  photoIconButton.addEventListener('click', (event) => {
-    const target = event.target;
-    console.log(target);
-  });
+  infoButton.addEventListener('click', openInfoElement);
+
+  photoIconButton.addEventListener('click', openInfoElement);
 });
 
 
