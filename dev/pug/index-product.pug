@@ -2,7 +2,7 @@ extends layouts/main-no-login.pug
 
 block variables
   - var pageTitle = 'Страница товара';
-  - var scriptSrc = 'js/script.js';
+  - var scriptSrc = 'js/common.js';
   - var link = 'css/styles.css';
 
 block content
@@ -77,5 +77,3 @@ block content
             .tab.tab_second
               .tab__content
                 +productBlock(12)
-block scripts
-  script(src=scriptSrc)

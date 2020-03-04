@@ -66,6 +66,16 @@ function css() {
 }
 
 /**
+ * Save js to prod directory
+ *
+ * @return {string} Return file's paths
+ */
+function js() {
+  return src(config.root + config.js.src)
+      .pipe(dest(config.js.prod));
+}
+
+/**
  * Initialize smart-grid library
  *
  * @param {*} done End async function
@@ -102,9 +112,9 @@ exports.html = html;
 exports.css = css;
 exports.grid = grid;
 // Build final bundle from pug, less, js
-exports.build = parallel(html, css);
+exports.build = parallel(html, css, js);
 // Watch changes from pug, less, js
-exports.watch = series(parallel(html, css), livereload,
+exports.watch = series(parallel(html, css, js), livereload,
     function() {
       watch(config.root + config.pug.watch, series(html, function(done) {
         browserSync.reload();
@@ -113,4 +123,11 @@ exports.watch = series(parallel(html, css), livereload,
       }));
 
       watch(config.root + config.css.watch, css);
+
+
+      watch(config.root + config.js.watch, series(js, function(done) {
+        browserSync.reload();
+
+        done();
+      }));
     });

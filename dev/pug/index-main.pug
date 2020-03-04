@@ -2,7 +2,7 @@ extends layouts/main.pug
 
 block variables
   - var pageTitle = 'Главная';
-  - var scriptSrc = 'js/script.js';
+  - var scriptSrc = 'js/common.js';
   - var link = 'css/styles.css';
 
 block content
@@ -257,5 +257,3 @@ block content
             input.subscribe-form__input(type='search', placeholder='Ваш e-mail', required)
             button.subscribe-form__button(type='submit') Подписаться
           span.subscribe-block__text Будьте в курсе новостей и акций сайта
-block scripts
-  script(src=scriptSrc)
