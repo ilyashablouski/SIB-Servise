@@ -4,6 +4,7 @@ block variables
   - var pageTitle = 'Страница со схемой';
   - var scriptSrc = 'js/common.js';
   - var link = 'css/styles.css';
+
   - 
     var tableDataArray = [
       {number: 'A1', article: '394114605', name: 'Tank kpl. mit Mechanik, blau', dropdown: 'Аналоги', storage: '1', price: true},
@@ -30,18 +31,9 @@ block content
                 .scheme-box__header
                   span DPC 8132
                 .scheme-box__inner
-                  <i class="arrow arrow-left">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6.87453 10L14.9995 1.87498V0L4.99951 10L14.9995 20V18.125L6.87453 10Z" fill="#656565"/>
-                    </svg>
-                  </i>
-                  .scheme-box__img
-                    img(src='images/scheme.jpg', alt='Схема')
-                  <i class="arrow arrow-right">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M13.1255 10L5.00049 18.125V20L15.0005 10L5.00049 0V1.87498L13.1255 10Z" fill="#656565"/>
-                    </svg>
-                  </i>
+                  //- Scheme slider
+                  include slider.html
+                  
             //- Scheme block description with table
             .scheme-container__description
               table.scheme-table

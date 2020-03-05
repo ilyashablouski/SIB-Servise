@@ -704,7 +704,7 @@ h6.h6 {
   );
 }
 
-.slider {
+.slider-main {
   .row-flex();
   flex-wrap: nowrap;
 
@@ -1586,6 +1586,56 @@ h6.h6 {
   color: #545252;
 }
 
+// Slider
+
+/* стили основного контейнера слайдера */
+.slider {
+  overflow: hidden;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* стили для обёртки, в которой заключены слайды */
+.slider__wrapper {
+  overflow: hidden;
+}
+
+/* стили для контейнера слайдов */
+.slider__items {
+  display: flex;
+  transition: transform 0.6s ease;
+  font-size: 0;
+  text-align: center;
+}
+
+/* стили для слайдов */
+.slider__item {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.slider__control:before {
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+.slider__control_prev:before {
+  background: url(../images/icons/left-arrow.svg) no-repeat;
+}
+
+.slider__control_next:before {
+  background: url(../images/icons/right-arrow.svg) no-repeat;
+}
+
+// End of slider
+
 .product-block {
   display: flex;
   box-sizing: border-box;
@@ -2400,6 +2450,7 @@ input[type=radio] {
   max-height: 132px;
   background: #ffffff;
   border-radius: 3px;
+  z-index: 2;
 
   &:before {
     bottom: 100%;
@@ -2422,15 +2473,19 @@ input[type=radio] {
 }
 
 .arrow {
-  top: 50%;
-  transform: translateY(-50%);
   position: absolute;
+  top: 0;
   cursor: pointer;
   display: block;
-  width: 30px;
-  height: 30px;
-  line-height: 34px;
+  width: 2.9rem;
+  height: 100%;
   text-align: center;
+
+  svg {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 }
 
 .arrow-left {
@@ -2439,4 +2494,9 @@ input[type=radio] {
 
 .arrow-right {
   right: 0;
+}
+
+.photo-icon {
+  width: 15px;
+  height: 15px;
 }
