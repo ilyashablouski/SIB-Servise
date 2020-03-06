@@ -1719,15 +1719,36 @@ h6.h6 {
   display: flex;
   flex: 1 1 auto;
   max-width: 481px;
+
+  &__input {
+    display: none;
+
+    &:checked ~ .block-img{
+      border: 1px solid #329FD1;
+    }
+  }
 }
 
 .block-img {
+  display: block;
   font-size: 0;
   border: 1px solid #E6E6E6;
 
   &_lg {
+    position: relative;
     margin-right: 2.7rem;
     max-width: 357px;
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: url(../images/icons/zoom-icon.png) no-repeat;
+      width: 33px;
+      height: 33px;
+    }
 
     .xs-block( {
         margin-right: 0;
@@ -1740,6 +1761,10 @@ h6.h6 {
     margin-bottom: 1.6rem;
     margin-right: 1.9rem;
     max-width: 106px;
+
+    img {
+      cursor: pointer;
+    }
   }
 }
 
@@ -1922,7 +1947,7 @@ h6.h6 {
 
   &_md {
     width: 40px;
-    height: 16px;
+    height: 22px;
     font-size: 1.8rem;
   }
 
@@ -1959,6 +1984,8 @@ h6.h6 {
       content: '';
       margin: 0 auto;
       display: block;
+      width: 18px;
+      height: 2px;
       background: #595959;
       border-radius: 1px;
     }
@@ -1974,6 +2001,8 @@ h6.h6 {
     &:before {
       content: '';
       margin: 0 auto;
+      width: 18px;
+      height: 2px;
       display: block;
       background: #595959;
       border-radius: 1px;
@@ -2072,6 +2101,8 @@ h6.h6 {
 
   );
 }
+
+
 
 // Tabs
 

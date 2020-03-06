@@ -1328,20 +1328,45 @@ h6.h6 {
   max-width: 481px;
 }
 
+.product-block-img__input {
+  display: none;
+}
+
+.product-block-img__input:checked ~ .block-img {
+  border: 1px solid #329FD1;
+}
+
 .block-img {
+  display: block;
   font-size: 0;
   border: 1px solid #E6E6E6;
 }
 
 .block-img_lg {
+  position: relative;
   margin-right: 2.7rem;
   max-width: 357px;
+}
+
+.block-img_lg:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: url(../images/icons/zoom-icon.png) no-repeat;
+  width: 33px;
+  height: 33px;
 }
 
 .block-img_sm {
   margin-bottom: 1.6rem;
   margin-right: 1.9rem;
   max-width: 106px;
+}
+
+.block-img_sm img {
+  cursor: pointer;
 }
 
 .product-block-info {
@@ -1438,7 +1463,7 @@ h6.h6 {
 
 .input-quantity_md {
   width: 40px;
-  height: 16px;
+  height: 22px;
   font-size: 1.8rem;
 }
 
@@ -1463,6 +1488,8 @@ h6.h6 {
   content: '';
   margin: 0 auto;
   display: block;
+  width: 18px;
+  height: 2px;
   background: #595959;
   border-radius: 1px;
 }
@@ -1478,6 +1505,8 @@ h6.h6 {
 .button-plus:before {
   content: '';
   margin: 0 auto;
+  width: 18px;
+  height: 2px;
   display: block;
   background: #595959;
   border-radius: 1px;
