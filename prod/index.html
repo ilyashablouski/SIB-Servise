@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="lib/fancybox/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="lib/easyZoom/easyzoom.css">
   </head>
   <body class="body"><svg width="0" height="0" class="hidden">
   <symbol viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg" id="burger-btn">
@@ -78,17 +80,17 @@
                 <h4 class="h4">Артикул: 1603300016</h4><span class="product-block-info__text">1603300016 шестигранная гайка</span>
               </div>
               <div class="product-block-img product-block__product-block-img">
-                <div class="product-block-img__miniature">
+                <div class="product-block-img__thumbnails">
                   <label class="product-block-img__label">
                     <input class="product-block-img__input" type="radio" name="button-group" checked>
-                    <div class="block-img block-img_sm"><img src="images/product-block-img-1.jpg" alt="Miniature 1"></div>
+                    <div class="block-img block-img_sm"><img src="images/product/product-block-img-1_thumb.jpg" alt="Thumbnail 1"></div>
                   </label>
                   <label class="product-block-img__label">
                     <input class="product-block-img__input" type="radio" name="button-group">
-                    <div class="block-img block-img_sm"><img src="images/product-block-img-1.jpg" alt="Miniature 2"></div>
+                    <div class="block-img block-img_sm"><img src="images/product/product-block-img-2_thumb.jpg" alt="Thumbnail 2"></div>
                   </label>
                 </div>
-                <div class="block-img block-img_lg"><img src="images/product-block-img-1.jpg" alt="Block image"></div>
+                <div class="block-img block-img_lg easyzoom easyzoom--overlay easyzoom--with-thumbnails is-ready"><a href="images/product/test.jpg"><img src="images/product/product-block-img-1.jpg" alt=""></a></div>
               </div>
               <div class="product-block-info product-block__product-block-info">
                 <div class="product-block-info__title">
@@ -638,8 +640,10 @@
         </div>
       </div>
     </footer>
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/common.js"></script>
+    <script src="lib/jquery-3.4.1.min.js"></script>
     <script src="js/slider.js"></script>
+    <script src="lib/fancybox/jquery.fancybox.min.js"></script>
+    <script src="lib/easyZoom/easyzoom.js"></script>
+    <script src="js/common.js"></script>
   </body>
 </html>

@@ -294,6 +294,11 @@ h6.h6 {
   max-width: 1058px;
 }
 
+// Fancybox corrective styles
+body.compensate-for-scrollbar {
+  margin: 0 auto;
+}
+
 /*
  * 1. Header
 **/
@@ -1718,12 +1723,12 @@ h6.h6 {
 .product-block-img {
   display: flex;
   flex: 1 1 auto;
-  max-width: 481px;
+  max-width: 512px;
 
   &__input {
     display: none;
 
-    &:checked ~ .block-img{
+    &:checked~.block-img {
       border: 1px solid #329FD1;
     }
   }
@@ -1760,7 +1765,7 @@ h6.h6 {
   &_sm {
     margin-bottom: 1.6rem;
     margin-right: 1.9rem;
-    max-width: 106px;
+    max-width: 104px;
 
     img {
       cursor: pointer;

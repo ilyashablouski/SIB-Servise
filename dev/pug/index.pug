@@ -24,19 +24,20 @@ block content
 
             .product-block-img.product-block__product-block-img
               //- Small images
-              .product-block-img__miniature
+              .product-block-img__thumbnails
                 label.product-block-img__label
                   input.product-block-img__input(type='radio', name='button-group', checked)
                   .block-img.block-img_sm
-                    img(src='images/product-block-img-1.jpg', alt='Miniature 1')
+                    img(src='images/product/product-block-img-1_thumb.jpg', alt='Thumbnail 1')
                 label.product-block-img__label
                   input.product-block-img__input(type='radio', name='button-group')
                   .block-img.block-img_sm
-                    img(src='images/product-block-img-1.jpg', alt='Miniature 2')
+                    img(src='images/product/product-block-img-2_thumb.jpg', alt='Thumbnail 2')
 
               //- Large image
-              .block-img.block-img_lg
-                img(src='images/product-block-img-1.jpg', alt='Block image')
+              .block-img.block-img_lg.easyzoom.easyzoom--overlay.easyzoom--with-thumbnails.is-ready
+                a(href='images/product/test.jpg')
+                  img(src='images/product/product-block-img-1.jpg', alt='')
 
             .product-block-info.product-block__product-block-info
               .product-block-info__title
