@@ -71,7 +71,7 @@ function css() {
  * @return {string} Return file's paths
  */
 function js() {
-  return src(config.root + config.js.watch)
+  return src(config.root + config.js.src)
       .pipe(dest(config.js.prod));
 }
 

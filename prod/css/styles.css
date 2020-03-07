@@ -361,10 +361,6 @@ h6.h6 {
   max-width: 1058px;
 }
 
-body.compensate-for-scrollbar {
-  margin: 0 auto;
-}
-
 /*
  * 1. Header
 **/
@@ -1329,7 +1325,7 @@ body.compensate-for-scrollbar {
 .product-block-img {
   display: flex;
   flex: 1 1 auto;
-  max-width: 512px;
+  max-width: 481px;
 }
 
 .product-block-img__input {
@@ -1366,7 +1362,7 @@ body.compensate-for-scrollbar {
 .block-img_sm {
   margin-bottom: 1.6rem;
   margin-right: 1.9rem;
-  max-width: 104px;
+  max-width: 106px;
 }
 
 .block-img_sm img {
