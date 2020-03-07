@@ -517,18 +517,23 @@ body.compensate-for-scrollbar {
   fill: #555555;
 }
 
+.wrapper__header-sub {
+  margin: 2.3rem 0;
+}
 
 .header-sub {
   display: flex;
   justify-content: flex-start;
+  align-items: center;
 
   &__logo {
     padding-right: 4.3rem;
-    margin-top: 1.5rem;
   }
 
   &__search-header {
-    margin: 2.3rem 0;
+    .xs-block({
+      margin-top: 1.5rem;
+    });
   }
 
   .xs-block( {
@@ -1726,9 +1731,7 @@ body.compensate-for-scrollbar {
   max-width: 512px;
 
   &__input {
-    display: none;
-
-    &:checked~.block-img {
+    &:checked ~ .block-img {
       border: 1px solid #329FD1;
     }
   }
@@ -1736,7 +1739,6 @@ body.compensate-for-scrollbar {
 
 .block-img {
   display: block;
-  font-size: 0;
   border: 1px solid #E6E6E6;
 
   &_lg {
@@ -1769,6 +1771,7 @@ body.compensate-for-scrollbar {
 
     img {
       cursor: pointer;
+      vertical-align: bottom;
     }
   }
 }

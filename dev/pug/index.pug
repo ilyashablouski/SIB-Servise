@@ -27,17 +27,17 @@ block content
               .product-block-img__thumbnails
                 label.product-block-img__label
                   input.product-block-img__input(type='radio', name='button-group', checked)
-                  .block-img.block-img_sm
-                    img(src='images/product/product-block-img-1_thumb.jpg', alt='Thumbnail 1')
+                  a.block-img.block-img_sm(href='images/product/product-1_zoom.jpg', data-standard='images/product/product-1_standart.jpg')
+                    img(src='images/product/product-1_thumbnail.jpg', alt='Thumbnail 1')
                 label.product-block-img__label
                   input.product-block-img__input(type='radio', name='button-group')
-                  .block-img.block-img_sm
-                    img(src='images/product/product-block-img-2_thumb.jpg', alt='Thumbnail 2')
+                  a.block-img.block-img_sm(href='images/product/product-2_zoom.jpg', data-standard='images/product/product-2_standart.jpg')
+                    img(src='images/product/product-2_thumbnail.jpg', alt='Thumbnail 2')
 
               //- Large image
-              .block-img.block-img_lg.easyzoom.easyzoom--overlay.easyzoom--with-thumbnails.is-ready
-                a(href='images/product/test.jpg')
-                  img(src='images/product/product-block-img-1.jpg', alt='')
+              .block-img.block-img_lg.easyzoom.easyzoom--overlay.easyzoom--with-thumbnails
+                a(href='images/product/product-1_zoom.jpg')
+                  img(src='images/product/product-1_standart.jpg', alt='Product img')
 
             .product-block-info.product-block__product-block-info
               .product-block-info__title
