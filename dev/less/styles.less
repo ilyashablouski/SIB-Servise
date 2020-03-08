@@ -218,10 +218,10 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .is-show {
-  display: block !important;
+  opacity: 1 !important;
 }
 
-.easyzoom-flyout img{
+.easyzoom-flyout img {
   max-width: none;
 }
 
@@ -535,9 +535,11 @@ body.compensate-for-scrollbar {
   }
 
   &__search-header {
-    .xs-block({
-      margin-top: 1.5rem;
-    });
+    .xs-block( {
+        margin-top: 1.5rem;
+      }
+
+    );
   }
 
   .xs-block( {
@@ -549,13 +551,14 @@ body.compensate-for-scrollbar {
 
 .dropdown-block {
   position: absolute;
-  display: none;
   left: 0;
   padding: 1rem 2.2rem 1.4rem 1.4rem;
   top: 44px;
   background: #FFFFFF;
+  opacity: 0;
   box-shadow: 2px 2px 4px rgba(105, 105, 105, 0.25);
   z-index: 2;
+  transition: all 0.125s;
 
   &__links {
 
@@ -1735,7 +1738,7 @@ body.compensate-for-scrollbar {
   max-width: 512px;
 
   &__input {
-    &:checked ~ .block-img {
+    &:checked~.block-img {
       border: 1px solid #329FD1;
     }
   }
@@ -2309,7 +2312,7 @@ input[type=radio] {
     }
 
     &:hover .min-photo {
-      visibility: visible;
+      opacity: 1;
     }
   }
 
@@ -2471,11 +2474,11 @@ input[type=radio] {
   display: inline-block;
   position: relative;
   top: 2px;
-  visibility: hidden;
+  opacity: 0;
   cursor: pointer;
 
   .md-block( {
-      visibility: visible;
+      opacity: 1;
     }
 
   );
@@ -2488,12 +2491,13 @@ input[type=radio] {
 .pop-up {
   position: absolute;
   transform: translate(-94%, 6px);
-  display: none;
   max-width: 206px;
   max-height: 132px;
   background: #ffffff;
+  opacity: 0;
   border-radius: 3px;
   z-index: 2;
+  transition: all 0.125s;
 
   &:before {
     bottom: 100%;
