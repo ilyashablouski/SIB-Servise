@@ -1,9 +1,17 @@
 extends layouts/main-no-login.pug
 
 block variables
-  - var pageTitle = 'Страница товара';
+  - var pageTitle = 'Страница со схемой';
   - var scriptSrc = 'js/common.js';
   - var link = 'css/styles.css';
+
+  - 
+    var tableDataArray = [
+      {number: 'A1', article: '394114605', name: 'Tank kpl. mit Mechanik, blau', dropdown: 'Аналоги', storage: '1', price: true},
+      {number: 'A2', article: '957117020', name: 'Gasmechanik kpl.', dropdown: '', storage: '2', price: true},
+      {number: 'A3', article: '394114605', name: 'Schraubeinsatz', dropdown: '', storage: '', price: false},
+      {number: 'A4', article: '957117020', name: 'Halbgasarretierung kpl.', dropdown: '', storage: '> 10', price: true},
+    ];
 
 block content
   .content
@@ -15,70 +23,54 @@ block content
             a.breadcrumb__item(href='#') Главная
             a.breadcrumb__item(href='#') Поиск&nbsp;запчастей&nbsp;по&nbsp;каталогу
             a.breadcrumb__item(href='#') BOSCH
+          
+          //- Scheme block
+          .scheme-container
+            .scheme-container__scheme
+              .scheme-box
+                .scheme-box__header
+                  span DPC 8132
+                .scheme-box__inner
+                  //- Scheme slider
+                  include slider.html
+                  
+            //- Scheme block description with table
+            .scheme-container__description
+              table.scheme-table
+              
+                tr.scheme-table__header
+                  th 
+                    h6.h6.scheme-table__header-number №
+                  th 
+                    h6.h6.scheme-table__header-article Артикул
+                  th 
+                    h6.h6.scheme-table__header-name Наименование
+                  th(style='text-align: left')
+                  th
+                    h6.h6.scheme-table__header-storage Склад
+                  th(style='text-align: center;')
+                    h6.h6.scheme-table__header-price Цена
+                  th
+                +createTableItem(tableDataArray)
+                +createTableItem(tableDataArray)
+                +createTableItem(tableDataArray)
 
-          //- Product block
-          .product-block.product-section__product-block
-            .product-block__title
-              h4.h4 Артикул: 1603300016
-              span.product-block-info__text 1603300016 шестигранная гайка
+                tr.scheme-table__header
+                  th(colspan='7', style='text-align: center;')
+                    h6.h6 Лист В
+                +createTableItem(tableDataArray)
+                +createTableItem(tableDataArray)
+                +createTableItem(tableDataArray)
+                +createTableItem(tableDataArray)
 
-            .product-block-img.product-block__product-block-img
-              //- Small images
-              .product-block-img__thumbnails
-                label.product-block-img__label
-                  input.product-block-img__input(type='radio', name='button-group', checked)
-                  a.block-img.block-img_sm(href='images/product/product-1_zoom.jpg', data-standard='images/product/product-1_standart.jpg')
-                    img(src='images/product/product-1_thumbnail.jpg', alt='Thumbnail 1')
-                label.product-block-img__label
-                  input.product-block-img__input(type='radio', name='button-group')
-                  a.block-img.block-img_sm(href='images/product/product-2_zoom.jpg', data-standard='images/product/product-2_standart.jpg')
-                    img(src='images/product/product-2_thumbnail.jpg', alt='Thumbnail 2')
-
-              //- Large image
-              .block-img.block-img_lg.easyzoom.easyzoom--overlay.easyzoom--with-thumbnails
-                a(href='images/product/product-1_zoom.jpg')
-                  img(src='images/product/product-1_standart.jpg', alt='Product img')
-
-            .product-block-info.product-block__product-block-info
-              .product-block-info__title
-                h4.h4 Артикул: 1603300016
-                span.product-block-info__text 1603300016 шестигранная гайка
-
-              .price-block.price-block_underline
-                span.price-block__title Цена:
-                span.price-block__cost 2,58&nbsp;руб.
-                //- Product counter
-                form.counter.counter-price-block(action='#', name='counter-above')
-                  button.button.button-minus.counter-price-block__button
-                  input.input-quantity.counter-price-block__input-quantity(type='number', step='1', min='1', value='1')
-                  button.button.button-plus.counter-price-block__button
-
-              .price-block
-                span.price-block__title Цена&nbsp;2:
-                span.price-block__cost 1,12&nbsp;руб.
-                //- Product counter 
-                form.counter.counter-price-block(action='#', name='counter-above')
-                  button.button.button-minus.counter-price-block__button
-                  input.input-quantity.counter-price-block__input-quantity(type='number', step='1', min='1', value='1')
-                  button.button.button-plus.counter-price-block__button
-
-      //- Tabs section
-      section.tabs-section.main__tabs-section
-        .wrapper
-          .tabs
-            //- .tabs-buttons
-            input.tabs-button#tab1(type='radio', name='tab-group', checked)
-            label.tab__title(for='tab1') Изделия
-
-            input.tabs-button#tab2(type='radio', name='tab-group')
-            label.tab__title.is-next-tab(for='tab2') Аналоги
-
-            //- Products tab
-            .tab.tab_first
-              .tab__content
-                +productBlock(6)
-
-            //- Analogs tab
-            .tab.tab_second
-              .tab__content
-                +productBlock(12)
+        section.text-section
+          p.additional-text.text-section__additional-text
+            | Но предприниматели в сети интернет, которые представляют собой яркий пример
+            | континентально-европейского типа политической культуры, будут объединены в целые
+            | кластеры себе подобных. Таким образом, постоянный количественный рост и сфера нашей
+            | активности позволяет оценить значение инновационных методов управления процессами.
+            | Задача организации, в особенности же экономическая повестка сегодняшнего дня влечет
+            | за собой процесс внедрения и модернизации новых принципов формирования материально-технической и кадровой базы. И нет сомнений,
+            | что активно развивающиеся страны третьего мира освещают чрезвычайно интересные особенности картины в целом, однако конкретные выводы,
+            | разумеется, превращены в посмешище, хотя само их существование приносит несомненную пользу обществу! Таким образом, социально-экономическое
+            | развитие предоставляет широкие возможности для переосмысления внешнеэкономических политик.

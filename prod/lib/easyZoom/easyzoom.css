@@ -19,7 +19,6 @@
 }
 
 .easyzoom.is-ready img {
-	max-width: none;
 	cursor: crosshair;
 }
 

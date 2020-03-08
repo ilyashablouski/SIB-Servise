@@ -7,7 +7,6 @@ const dropdownBlock = document.querySelector('.dropdown-block');
 const tableElement = document.querySelector('.scheme-table');
 const popupElements = document.querySelectorAll('.pop-up-js-window');
 
-
 // Define functions
 /**
  * Open/close element
@@ -69,24 +68,27 @@ window.addEventListener('DOMContentLoaded', () => {
    *
    */
 
-  // // Instantiate EasyZoom instances
-  // const $easyzoom = $('.easyzoom').easyZoom();
+  // Instantiate EasyZoom instances
+  const $easyzoom = $('.easyzoom').easyZoom();
 
-  // // Setup thumbnails example
-  // const api = $easyzoom.filter('.easyzoom--with-thumbnails').data('easyZoom');
+  // Setup thumbnails example
+  const api = $easyzoom.filter('.easyzoom--with-thumbnails').data('easyZoom');
 
-  // $('.product-block-img__thumbnails').on('click', 'a', function(e) {
-  //   const $this = $(this);
+  $('.product-block-img__thumbnails').on('click', 'a', function(e) {
+    const $this = $(this);
 
-  //   e.preventDefault();
+    e.preventDefault();
+    // Add forced checkbox event
+    $this.parent().children('.product-block-img__input').prop('checked', true);
 
-  //   // Use EasyZoom's `swap` method
-  //   api.swap($this.data('standard'), $this.attr('href'));
-  // });
+    // Use EasyZoom's `swap` method
+    api.swap($this.data('standard'), $this.attr('href'));
+  });
 
   /* eslint-disable */
   /**
    * Slider
+   * 
    */
   'use strict';
   var slideShow = (function () {
@@ -307,10 +309,23 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     }
   }());
-  
+
   if (document.querySelector('.slider')) {
     slideShow('.slider', {
       isAutoplay: false
     });
   }
+
+  /**
+   * Fancybox options
+   * 
+   */
+  $('[data-fancybox="gallery"]').fancybox({
+    buttons: [
+      "zoom",
+      "share",
+      "fullScreen",
+      "download",
+    ],
+  });
 });
