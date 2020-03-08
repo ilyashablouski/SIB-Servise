@@ -326,6 +326,8 @@ window.addEventListener('DOMContentLoaded', () => {
       "share",
       "fullScreen",
       "download",
+      "thumbs",
+      "close"
     ],
   });
 });
