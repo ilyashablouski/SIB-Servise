@@ -2,17 +2,29 @@
 //  * Define variables
 //  */
 const infoButton = document.querySelector('.header-nav-info');
-// const catalogButton = document.querySelector('.header-nav-catalog');
+const catalogButton = document.querySelector('.header-nav-catalog');
 const dropdownBlock = document.querySelector('.dropdown-block');
 const tableElement = document.querySelector('.scheme-table');
 const popupElements = document.querySelectorAll('.pop-up-js-window');
 
 // Define functions
 /**
- * Open/close element
+ * Open/close info element
+ *
+ * @param {object} target
  */
-function openInfoElement() {
+function openInfoElement(target) {
   dropdownBlock.classList.toggle('is-show');
+  target.lastElementChild.classList.toggle('is-rotate');
+}
+
+/**
+ * Open/close catalog element
+ *
+ * @param {object} target
+ */
+function openCatalogElement(target) {
+  target.lastElementChild.classList.toggle('is-rotate');
 }
 
 /**
@@ -29,6 +41,18 @@ function showPopup(target) {
   } else if (target.classList.contains('photo-icon__inner')) {
     const popupWindow = target.parentElement.parentElement.nextElementSibling;
     popupWindow.classList.toggle('is-show');
+  }
+}
+
+/**
+ * Open/close pop-up analogs
+ *
+ * @param {object} target
+ */
+function showPopupAnalog(target) {
+  // If we in photo-icon element
+  if (target.classList.contains('scheme-table__dropdown-link')) {
+    target.nextElementSibling.classList.toggle('is-rotate');
   }
 }
 
@@ -50,7 +74,14 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 
   // Call open info element event
-  infoButton.addEventListener('click', openInfoElement);
+  infoButton.addEventListener('click', (event) => {
+    openInfoElement(event.currentTarget);
+  });
+
+  // Call open catalog element event
+  catalogButton.addEventListener('click', (event) => {
+    openCatalogElement(event.currentTarget);
+  });
 
   /**
    * Dilocation and call events in table
@@ -60,6 +91,7 @@ window.addEventListener('DOMContentLoaded', () => {
       const target = event.target;
 
       showPopup(target);
+      showPopupAnalog(target);
     });
   }
 

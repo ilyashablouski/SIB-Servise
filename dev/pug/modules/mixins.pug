@@ -65,7 +65,9 @@ mixin createTableItem(tableDataArray)
         .pop-up.pop-up-js.pop-up-js-window
           img.pop-up__img(src='images/popup-img.jpg', alt='Pop-up image')
         if obj.dropdown
-          a.scheme-table__dropdown-link(href='#')= obj.dropdown
+          .scheme-table__dropdown-inner
+            a.scheme-table__dropdown-link(href='#')= obj.dropdown
+            i.triangle.triangle_sm
       td.scheme-table__storage
         span= obj.storage
       td.scheme-table__price
