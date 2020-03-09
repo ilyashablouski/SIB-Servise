@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Страница со схемой</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="lib/fancybox/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="lib/easyZoom/easyzoom.css">
+  </head>
+  <body class="body"><svg width="0" height="0" class="hidden">
+  <symbol viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg" id="burger-btn">
+    <rect width="20" height="2" rx="1" fill="#fff"></rect>
+    <rect y="6" width="20" height="2" rx="1" fill="#fff"></rect>
+    <rect y="12" width="20" height="2" rx="1" fill="#fff"></rect>
+  </symbol>
+  <symbol viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" id="info">
+    <path
+      d="M10 20c5.514 0 10-4.486 10-10S15.514 0 10 0 0 4.486 0 10s4.486 10 10 10zM10 .77c5.09 0 9.23 4.14 9.23 9.23 0 5.09-4.14 9.23-9.23 9.23C4.91 19.23.77 15.09.77 10 .77 4.91 4.91.77 10 .77z"
+      fill="#fff"></path>
+    <path
+      d="M9.027 4.952c-.017.535.375.963 1 .963.553 0 .946-.428.946-.963a.957.957 0 0 0-.981-.982c-.59 0-.965.428-.965.982zm1.75 11.066V7.38H9.205v8.64h1.57z"
+      fill="#fff"></path>
+  </symbol>
+
+  <symbol fill="none" xmlns="http://www.w3.org/2000/svg" id="photo-icon">
+    <path d="M8.23704 6.20008C8.92049 6.88352 8.92049 7.99159 8.23704 8.67503C7.5536 9.35847 6.44554 9.35847 5.76209 8.67503C5.07865 7.99159 5.07865 6.88352 5.76209 6.20008C6.44554 5.51664 7.5536 5.51664 8.23704 6.20008Z" fill="#3496C5"/>
+    <path d="M12.25 2.62494H11.0408L10.1654 0.874878H3.8338L2.95919 2.6258L1.75175 2.62795C0.789145 2.62967 0.00553173 3.41411 0.00470054 4.37715L0 11.3748C0 12.34 0.784875 13.1253 1.75006 13.1253H12.25C13.2152 13.1253 14 12.3404 14 11.3752V4.37497C14 3.40981 13.2151 2.62494 12.25 2.62494ZM6.99978 10.9377C5.06984 10.9377 3.49966 9.36751 3.49966 7.43757C3.49966 5.50763 5.06984 3.93745 6.99978 3.93745C8.92973 3.93745 10.4999 5.50763 10.4999 7.43757C10.4999 9.36751 8.92973 10.9377 6.99978 10.9377Z" fill="#3496C5"/>
+  </symbol>
+</svg>
+    <header class="header">
+      <div class="header-nav">
+        <div class="wrapper">
+          <div class="header-nav__inner">
+            <div class="header-nav-info first pop-up-js"><svg class="icon icon__info">
+<use xlink:href="#info"></use>
+</svg><span class="header-nav-info__text">Информация</span><i class="triangle"></i>
+            </div>
+            <div class="header-nav-catalog"><svg class="icon icon__burger-btn">
+<use xlink:href="#burger-btn"></use>
+</svg><span class="header-nav-catalog__text">Каталог</span><i class="triangle"></i>
+            </div><a class="header-nav-enter" href="#">Вход</a>
+            <div class="dropdown-block pop-up-js pop-up-js-window"><a class="dropdown-block__links" href="#">Каталог</a><a class="dropdown-block__links" href="#">Товары со скидкой</a><a class="dropdown-block__links" href="#">Новинки</a><a class="dropdown-block__links" href="#">Уценка %</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="wrapper">
+        <div class="header-sub wrapper__header-sub">
+          <div class="logo header-sub__logo"><span class="logo__text">СИБ-сервис</span></div>
+          <div class="search search-header header-sub__search-header">
+            <form class="search__form" action="#" name="search-form">
+              <input class="search__input" type="search" placeholder="Название, артикул, производитель" required>
+              <button class="search__button" type="submit"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M15.863 15.184L11.9747 11.2958C13.0177 10.0967 13.6492 8.53215 13.6492 6.82217C13.6492 3.05809 10.5876 0 6.82706 0C3.06298 0 0.00488281 3.06164 0.00488281 6.82217C0.00488281 10.5827 3.06652 13.6443 6.82706 13.6443C8.53703 13.6443 10.1016 13.0129 11.3007 11.9698L15.1889 15.8581C15.2812 15.9503 15.4053 16 15.5259 16C15.6466 16 15.7707 15.9539 15.863 15.8581C16.0475 15.6736 16.0475 15.3685 15.863 15.184ZM0.959207 6.82217C0.959207 3.5867 3.59158 0.957871 6.82351 0.957871C10.059 0.957871 12.6878 3.59024 12.6878 6.82217C12.6878 10.0541 10.059 12.69 6.82351 12.69C3.59158 12.69 0.959207 10.0576 0.959207 6.82217Z" fill="white"/>
+<defs>
+<clipPath id="clip0">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>
+              </button>
+            </form>
+          </div>
+          <div class="header-nav-personal-info header-nav__header-nav-personal-info is-no-login-icons"><a class="header-nav-personal-info__fav" href="#"><svg class="icon icon__favorite-btn icon_theme_grey">
+<path d="M5.657 27.339a.5.5 0 0 1-.494-.586l1.55-9.03L.15 11.328a.502.502 0 0 1 .278-.855l9.067-1.317L13.551.94a.5.5 0 0 1 .898 0l4.055 8.216 9.067 1.317a.502.502 0 0 1 .278.855l-6.561 6.396 1.549 9.03a.503.503 0 0 1-.728.528L14 23.019l-8.11 4.263a.506.506 0 0 1-.233.057zm-4.079-16.02l6.022 5.87a.501.501 0 0 1 .144.444l-1.422 8.289 7.445-3.914a.499.499 0 0 1 .467 0l7.443 3.914-1.421-8.29a.502.502 0 0 1 .144-.443l6.022-5.87-8.322-1.21a.501.501 0 0 1-.378-.274L14 2.295l-3.722 7.54a.501.501 0 0 1-.378.275l-8.322 1.209z" fill="white"/>
+</svg><span class="header-nav-personal-info__fav-counter">0</span></a><a class="header-nav-personal-info__cart header-nav-personal-info__cart_last" href="#"><svg class="icon icon__cart icon_theme_grey">
+<path d="M11.74 22.03a2.465 2.465 0 0 0-2.462 2.462 2.465 2.465 0 0 0 2.463 2.463 2.465 2.465 0 0 0 2.462-2.463 2.465 2.465 0 0 0-2.462-2.462zm0 3.55a1.089 1.089 0 0 1 0-2.175 1.089 1.089 0 0 1 0 2.175zm8.638-3.55a2.465 2.465 0 0 0-2.462 2.462 2.465 2.465 0 0 0 2.462 2.463 2.465 2.465 0 0 0 2.463-2.463 2.465 2.465 0 0 0-2.463-2.462zm0 3.55a1.089 1.089 0 0 1 0-2.175 1.089 1.089 0 0 1 0 2.175zm.606-16.515h-9.852a.687.687 0 1 0 0 1.375h9.852a.687.687 0 1 0 0-1.375zm-.535 3.57h-8.78a.687.687 0 1 0 0 1.375h8.78a.687.687 0 1 0 0-1.375z" fill="white"/>
+<path d="M27.69 6.002a1.37 1.37 0 0 0-1.066-.507H5.21l-.432-2.1a1.377 1.377 0 0 0-.8-.983L.961 1.102a.687.687 0 1 0-.548 1.262l3.018 1.31L6.757 19.82a1.38 1.38 0 0 0 1.347 1.098h16.47a.687.687 0 1 0 0-1.375H8.104L7.7 17.579h17.002a1.38 1.38 0 0 0 1.347-1.098l1.923-9.333a1.37 1.37 0 0 0-.28-1.146zm-2.989 10.202H7.416L5.493 6.87h21.131l-1.923 9.334z" fill="white"/>
+</svg><span class="header-nav-personal-info__cart-counter">0</span></a></div>
+        </div>
+      </div>
+    </header>
+    <div class="content">
+      <main class="main content__main">
+        <div class="wrapper">
+          <section class="product-section">
+            <div class="breadcrumb product-section__breadcrumb"><a class="breadcrumb__item" href="#">Главная</a><a class="breadcrumb__item" href="#">Поиск&nbsp;запчастей&nbsp;по&nbsp;каталогу</a><a class="breadcrumb__item" href="#">BOSCH</a></div>
+            <div class="scheme-container">
+              <div class="scheme-container__scheme">
+                <div class="scheme-box">
+                  <div class="scheme-box__header"><span>DPC 8132</span></div>
+                  <div class="scheme-box__inner"><div class="slider">
+  <div class="slider__wrapper">
+    <div class="slider__items">
+      <a data-fancybox="gallery" href="images/scheme_zoom.jpg" class="slider__item">
+        <img src="images/scheme.jpg" alt="Схема">
+      </a>
+
+      <a data-fancybox="gallery" href="images/scheme_zoom.jpg"  class="slider__item">
+        <img src="images/scheme.jpg" alt="Схема">
+      </a>
+
+      <a data-fancybox="gallery" href="images/scheme_zoom.jpg" class="slider__item">
+        <img src="images/scheme.jpg" alt="Схема">
+      </a>
+
+      <a data-fancybox="gallery" href="images/scheme_zoom.jpg" class="slider__item">
+        <img src="images/scheme.jpg" alt="Схема">
+      </a>
+    </div>
+  </div>
+
+  <a class="slider__control slider__control_prev arrow arrow-left" href="#" role="button"></a>
+  <a class="slider__control slider__control_next arrow arrow-right" href="#" role="button"></a>
+</div>
+                  </div>
+                </div>
+              </div>
+              <div class="scheme-container__description">
+                <table class="scheme-table">
+                  <tr class="scheme-table__header">
+                    <th> 
+                      <h6 class="h6 scheme-table__header-number">№</h6>
+                    </th>
+                    <th> 
+                      <h6 class="h6 scheme-table__header-article">Артикул</h6>
+                    </th>
+                    <th> 
+                      <h6 class="h6 scheme-table__header-name">Наименование</h6>
+                    </th>
+                    <th style="text-align: left"></th>
+                    <th>
+                      <h6 class="h6 scheme-table__header-storage">Склад</h6>
+                    </th>
+                    <th style="text-align: center;">
+                      <h6 class="h6 scheme-table__header-price">Цена</h6>
+                    </th>
+                    <th></th>
+                  </tr>
+                  <tr class="scheme-table__item">
+                    <td class="scheme-table__number">A1</td>
+                    <td class="scheme-table__article">394114605</td>
+                    <td class="scheme-table__name">
+                      <div class="scheme-table__inner">Tank kpl. mit Mechanik, blau</div>
+                    </td>
+                    <td class="scheme-table__dropdown"><i class="min-photo"><svg class="photo-icon pop-up-js">
+<use xlink:href="#photo-icon" class="photo-icon__inner pop-up-js"></use>
+</svg></i>
+                      <div class="pop-up pop-up-js pop-up-js-window"><img class="pop-up__img" src="images/popup-img.jpg" alt="Pop-up image"/></div>
+                      <div class="scheme-table__dropdown-inner"><a class="scheme-table__dropdown-link" href="#">Аналоги</a><i class="triangle triangle_sm"></i></div>
+                    </td>
+                    <td class="scheme-table__storage"><span>1</span></td>
+                    <td class="scheme-table__price"><span class="scheme-table__price-value scheme-table__price-value_blue">3.99</span>
+                    </td>
+                    <td class="scheme-table__counter">
+                      <form class="counter counter_sm" action="#" name="counter-below">
+                        <button class="button button-minus button_sm button-minus_sm"></button>
+                        <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                        <button class="button button-plus button_sm button-plus_sm"></button>
+                      </form>
+                    </td>
+                  </tr>
+                  <tr class="scheme-table__item">
+                    <td class="scheme-table__number">A2</td>
+                    <td class="scheme-table__article">957117020</td>
+                    <td class="scheme-table__name">
+                      <div class="scheme-table__inner">Gasmechanik kpl.</div>
+                    </td>
+                    <td class="scheme-table__dropdown"><i class="min-photo"><svg class="photo-icon pop-up-js">
+<use xlink:href="#photo-icon" class="photo-icon__inner pop-up-js"></use>
+</svg></i>
+                      <div class="pop-up pop-up-js pop-up-js-window"><img class="pop-up__img" src="images/popup-img.jpg" alt="Pop-up image"/></div>
+                    </td>
+                    <td class="scheme-table__storage"><span>2</span></td>
+                    <td class="scheme-table__price"><span class="scheme-table__price-value scheme-table__price-value_blue">3.99</span>
+                    </td>
+                    <td class="scheme-table__counter">
+                      <form class="counter counter_sm" action="#" name="counter-below">
+                        <button class="button button-minus button_sm button-minus_sm"></button>
+                        <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                        <button class="button button-plus button_sm button-plus_sm"></button>
+                      </form>
+                    </td>
+                  </tr>
+                  <tr class="scheme-table__item">
+                    <td class="scheme-table__number">A3</td>
+                    <td class="scheme-table__article">394114605</td>
+                    <td class="scheme-table__name">
+                      <div class="scheme-table__inner">Schraubeinsatz</div>
+                    </td>
+                    <td class="scheme-table__dropdown"><i class="min-photo"><svg class="photo-icon pop-up-js">
+<use xlink:href="#photo-icon" class="photo-icon__inner pop-up-js"></use>
+</svg></i>
+                      <div class="pop-up pop-up-js pop-up-js-window"><img class="pop-up__img" src="images/popup-img.jpg" alt="Pop-up image"/></div>
+                    </td>
+                    <td class="scheme-table__storage"><span></span></td>
+                    <td class="scheme-table__price"><span class="scheme-table__price-value">нет<br>в наличии</span>
+                    </td>
+                    <td class="scheme-table__counter">
+                      <form class="counter counter_sm" action="#" name="counter-below">
+                        <button class="button button-minus button_sm button-minus_sm"></button>
+                        <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                        <button class="button button-plus button_sm button-plus_sm"></button>
+                      </form>
+                    </td>
+                  </tr>
+                  <tr class="scheme-table__item">
+                    <td class="scheme-table__number">A4</td>
+                    <td class="scheme-table__article">957117020</td>
+                    <td class="scheme-table__name">
+                      <div class="scheme-table__inner">Halbgasarretierung kpl.</div>
+                    </td>
+                    <td class="scheme-table__dropdown"><i class="min-photo"><svg class="photo-icon pop-up-js">
+<use xlink:href="#photo-icon" class="photo-icon__inner pop-up-js"></use>
+</svg></i>
+                      <div class="pop-up pop-up-js pop-up-js-window"><img class="pop-up__img" src="images/popup-img.jpg" alt="Pop-up image"/></div>
+                    </td>
+                    <td class="scheme-table__storage"><span>&gt; 10</span></td>
+                    <td class="scheme-table__price"><span class="scheme-table__price-value scheme-table__price-value_blue">3.99</span>
+                    </td>
+                    <td class="scheme-table__counter">
+                      <form class="counter counter_sm" action="#" name="counter-below">
+                        <button class="button button-minus button_sm button-minus_sm"></button>
+                        <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                        <button class="button button-plus button_sm button-plus_sm"></button>
+                      </form>
+                    </td>
+                  </tr>
+                  <tr class="scheme-table__item">
+                    <td class="scheme-table__number">A1</td>
+                    <td class="scheme-table__article">394114605</td>
+                    <td class="scheme-table__name">
+                      <div class="scheme-table__inner">Tank kpl. mit Mechanik, blau</div>
+                    </td>
+                    <td class="scheme-table__dropdown"><i class="min-photo"><svg class="photo-icon pop-up-js">
+<use xlink:href="#photo-icon" class="photo-icon__inner pop-up-js"></use>
+</svg></i>
+                      <div class="pop-up pop-up-js pop-up-js-window"><img class="pop-up__img" src="images/popup-img.jpg" alt="Pop-up image"/></div>
+                      <div class="scheme-table__dropdown-inner"><a class="scheme-table__dropdown-link" href="#">Аналоги</a><i class="triangle triangle_sm"></i></div>
+                    </td>
+                    <td class="scheme-table__storage"><span>1</span></td>
+                    <td class="scheme-table__price"><span class="scheme-table__price-value scheme-table__price-value_blue">3.99</span>
+                    </td>
+                    <td class="scheme-table__counter">
+                      <form class="counter counter_sm" action="#" name="counter-below">
+                        <button class="button button-minus button_sm button-minus_sm"></button>
+                        <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                        <button class="button button-plus button_sm button-plus_sm"></button>
+                      </form>
+                    </td>
+                  </tr>
+                  <tr class="scheme-table__item">
+                    <td class="scheme-table__number">A2</td>
+                    <td class="scheme-table__article">957117020</td>
+                    <td class="scheme-table__name">
+                      <div class="scheme-table__inner">Gasmechanik kpl.</div>
+                    </td>
+                    <td class="scheme-table__dropdown"><i class="min-photo"><svg class="photo-icon pop-up-js">
+<use xlink:href="#photo-icon" class="photo-icon__inner pop-up-js"></use>
+</svg></i>
+                      <div class="pop-up pop-up-js pop-up-js-window"><img class="pop-up__img" src="images/popup-img.jpg" alt="Pop-up image"/></div>
+                    </td>
+                    <td class="scheme-table__storage"><span>2</span></td>
+                    <td class="scheme-table__price"><span class="scheme-table__price-value scheme-table__price-value_blue">3.99</span>
+                    </td>
+                    <td class="scheme-table__counter">
+                      <form class="counter counter_sm" action="#" name="counter-below">
+                        <button class="button button-minus button_sm button-minus_sm"></button>
+                        <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                        <button class="button button-plus button_sm button-plus_sm"></button>
+                      </form>
+                    </td>
+                  </tr>
+                  <tr class="scheme-table__item">
+                    <td class="scheme-table__number">A3</td>
+                    <td class="scheme-table__article">394114605</td>
+                    <td class="scheme-table__name">
+                      <div class="scheme-table__inner">Schraubeinsatz</div>
+                    </td>
+                    <td class="scheme-table__dropdown"><i class="min-photo"><svg class="photo-icon pop-up-js">
+<use xlink:href="#photo-icon" class="photo-icon__inner pop-up-js"></use>
+</svg></i>
+                      <div class="pop-up pop-up-js pop-up-js-window"><img class="pop-up__img" src="images/popup-img.jpg" alt="Pop-up image"/></div>
+                    </td>
+                    <td class="scheme-table__storage"><span></span></td>
+                    <td class="scheme-table__price"><span class="scheme-table__price-value">нет<br>в наличии</span>
+                    </td>
+                    <td class="scheme-table__counter">
+                      <form class="counter counter_sm" action="#" name="counter-below">
+                        <button class="button button-minus button_sm button-minus_sm"></button>
+                        <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                        <button class="button button-plus button_sm button-plus_sm"></button>
+                      </form>
+                    </td>
+                  </tr>
+                  <tr class="scheme-table__item">
+                    <td class="scheme-table__number">A4</td>
+                    <td class="scheme-table__article">957117020</td>
+                    <td class="scheme-table__name">
+                      <div class="scheme-table__inner">Halbgasarretierung kpl.</div>
+                    </td>
+                    <td class="scheme-table__dropdown"><i class="min-photo"><svg class="photo-icon pop-up-js">
+<use xlink:href="#photo-icon" class="photo-icon__inner pop-up-js"></use>
+</svg></i>
+                      <div class="pop-up pop-up-js pop-up-js-window"><img class="pop-up__img" src="images/popup-img.jpg" alt="Pop-up image"/></div>
+                    </td>
+                    <td class="scheme-table__storage"><span>&gt; 10</span></td>
+                    <td class="scheme-table__price"><span class="scheme-table__price-value scheme-table__price-value_blue">3.99</span>
+                    </td>
+                    <td class="scheme-table__counter">
+                      <form class="counter counter_sm" action="#" name="counter-below">
+                        <button class="button button-minus button_sm button-minus_sm"></button>
+                        <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                        <button class="button button-plus button_sm button-plus_sm"></button>
+                      </form>
+                    </td>
+                  </tr>
+                  <tr class="scheme-table__item">
+                    <td class="scheme-table__number">A1</td>
+                    <td class="scheme-table__article">394114605</td>
+                    <td class="scheme-table__name">
+                      <div class="scheme-table__inner">Tank kpl. mit Mechanik, blau</div>
+                    </td>
+                    <td class="scheme-table__dropdown"><i class="min-photo"><svg class="photo-icon pop-up-js">
+<use xlink:href="#photo-icon" class="photo-icon__inner pop-up-js"></use>
+</svg></i>
+                      <div class="pop-up pop-up-js pop-up-js-window"><img class="pop-up__img" src="images/popup-img.jpg" alt="Pop-up image"/></div>
+                      <div class="scheme-table__dropdown-inner"><a class="scheme-table__dropdown-link" href="#">Аналоги</a><i class="triangle triangle_sm"></i></div>
+                    </td>
+                    <td class="scheme-table__storage"><span>1</span></td>
+                    <td class="scheme-table__price"><span class="scheme-table__price-value scheme-table__price-value_blue">3.99</span>
+                    </td>
+                    <td class="scheme-table__counter">
+                      <form class="counter counter_sm" action="#" name="counter-below">
+                        <button class="button button-minus button_sm button-minus_sm"></button>
+                        <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                        <button class="button button-plus button_sm button-plus_sm"></button>
+                      </form>
+                    </td>
+                  </tr>
+                  <tr class="scheme-table__item">
+                    <td class="scheme-table__number">A2</td>
+                    <td class="scheme-table__article">957117020</td>
+                    <td class="scheme-table__name">
+                      <div class="scheme-table__inner">Gasmechanik kpl.</div>
+                    </td>
+                    <td class="scheme-table__dropdown"><i class="min-photo"><svg class="photo-icon pop-up-js">
+<use xlink:href="#photo-icon" class="photo-icon__inner pop-up-js"></use>
+</svg></i>
+                      <div class="pop-up pop-up-js pop-up-js-window"><img class="pop-up__img" src="images/popup-img.jpg" alt="Pop-up image"/></div>
+                    </td>
+                    <td class="scheme-table__storage"><span>2</span></td>
+                    <td class="scheme-table__price"><span class="scheme-table__price-value scheme-table__price-value_blue">3.99</span>
+                    </td>
+                    <td class="scheme-table__counter">
+                      <form class="counter counter_sm" action="#" name="counter-below">
+                        <button class="button button-minus button_sm button-minus_sm"></button>
+                        <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                        <button class="button button-plus button_sm button-plus_sm"></button>
+                      </form>
+                    </td>
+                  </tr>
+                  <tr class="scheme-table__item">
+                    <td class="scheme-table__number">A3</td>
+                    <td class="scheme-table__article">394114605</td>
+                    <td class="scheme-table__name">
+                      <div class="scheme-table__inner">Schraubeinsatz</div>
+                    </td>
+                    <td class="scheme-table__dropdown"><i class="min-photo"><svg class="photo-icon pop-up-js">
+<use xlink:href="#photo-icon" class="photo-icon__inner pop-up-js"></use>
+</svg></i>
+                      <div class="pop-up pop-up-js pop-up-js-window"><img class="pop-up__img" src="images/popup-img.jpg" alt="Pop-up image"/></div>
+                    </td>
+                    <td class="scheme-table__storage"><span></span></td>
+                    <td class="scheme-table__price"><span class="scheme-table__price-value">нет<br>в наличии</span>
+                    </td>
+                    <td class="scheme-table__counter">
+                      <form class="counter counter_sm" action="#" name="counter-below">
+                        <button class="button button-minus button_sm button-minus_sm"></button>
+                        <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                        <button class="button button-plus button_sm button-plus_sm"></button>
+                      </form>
+                    </td>
+                  </tr>
+                  <tr class="scheme-table__item">
+                    <td class="scheme-table__number">A4</td>
+                    <td class="scheme-table__article">957117020</td>
+                    <td class="scheme-table__name">
+                      <div class="scheme-table__inner">Halbgasarretierung kpl.</div>
+                    </td>
+                    <td class="scheme-table__dropdown"><i class="min-photo"><svg class="photo-icon pop-up-js">
+<use xlink:href="#photo-icon" class="photo-icon__inner pop-up-js"></use>
+</svg></i>
+                      <div class="pop-up pop-up-js pop-up-js-window"><img class="pop-up__img" src="images/popup-img.jpg" alt="Pop-up image"/></div>
+                    </td>
+                    <td class="scheme-table__storage"><span>&gt; 10</span></td>
+                    <td class="scheme-table__price"><span class="scheme-table__price-value scheme-table__price-value_blue">3.99</span>
+                    </td>
+                    <td class="scheme-table__counter">
+                      <form class="counter counter_sm" action="#" name="counter-below">
+                        <button class="button button-minus button_sm button-minus_sm"></button>
+                        <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                        <button class="button button-plus button_sm button-plus_sm"></button>
+                      </form>
+                    </td>
+                  </tr>
+                  <tr class="scheme-table__header">
+                    <th colspan="7" style="text-align: center;">
+                      <h6 class="h6">Лист В</h6>
+                    </th>
+                  </tr>
+                  <tr class="scheme-table__item">
+                    <td class="scheme-table__number">A1</td>
+                    <td class="scheme-table__article">394114605</td>
+                    <td class="scheme-table__name">
+                      <div class="scheme-table__inner">Tank kpl. mit Mechanik, blau</div>
+                    </td>
+                    <td class="scheme-table__dropdown"><i class="min-photo"><svg class="photo-icon pop-up-js">
+<use xlink:href="#photo-icon" class="photo-icon__inner pop-up-js"></use>
+</svg></i>
+                      <div class="pop-up pop-up-js pop-up-js-window"><img class="pop-up__img" src="images/popup-img.jpg" alt="Pop-up image"/></div>
+                      <div class="scheme-table__dropdown-inner"><a class="scheme-table__dropdown-link" href="#">Аналоги</a><i class="triangle triangle_sm"></i></div>
+                    </td>
+                    <td class="scheme-table__storage"><span>1</span></td>
+                    <td class="scheme-table__price"><span class="scheme-table__price-value scheme-table__price-value_blue">3.99</span>
+                    </td>
+                    <td class="scheme-table__counter">
+                      <form class="counter counter_sm" action="#" name="counter-below">
+                        <button class="button button-minus button_sm button-minus_sm"></button>
+                        <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                        <button class="button button-plus button_sm button-plus_sm"></button>
+                      </form>
+                    </td>
+                  </tr>
+                  <tr class="scheme-table__item">
+                    <td class="scheme-table__number">A2</td>
+                    <td class="scheme-table__article">957117020</td>
+                    <td class="scheme-table__name">
+                      <div class="scheme-table__inner">Gasmechanik kpl.</div>
+                    </td>
+                    <td class="scheme-table__dropdown"><i class="min-photo"><svg class="photo-icon pop-up-js">
+<use xlink:href="#photo-icon" class="photo-icon__inner pop-up-js"></use>
+</svg></i>
+                      <div class="pop-up pop-up-js pop-up-js-window"><img class="pop-up__img" src="images/popup-img.jpg" alt="Pop-up image"/></div>
+                    </td>
+                    <td class="scheme-table__storage"><span>2</span></td>
+                    <td class="scheme-table__price"><span class="scheme-table__price-value scheme-table__price-value_blue">3.99</span>
+                    </td>
+                    <td class="scheme-table__counter">
+                      <form class="counter counter_sm" action="#" name="counter-below">
+                        <button class="button button-minus button_sm button-minus_sm"></button>
+                        <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                        <button class="button button-plus button_sm button-plus_sm"></button>
+                      </form>
+                    </td>
+                  </tr>
+                  <tr class="scheme-table__item">
+                    <td class="scheme-table__number">A3</td>
+                    <td class="scheme-table__article">394114605</td>
+                    <td class="scheme-table__name">
+                      <div class="scheme-table__inner">Schraubeinsatz</div>
+                    </td>
+                    <td class="scheme-table__dropdown"><i class="min-photo"><svg class="photo-icon pop-up-js">
+<use xlink:href="#photo-icon" class="photo-icon__inner pop-up-js"></use>
+</svg></i>
+                      <div class="pop-up pop-up-js pop-up-js-window"><img class="pop-up__img" src="images/popup-img.jpg" alt="Pop-up image"/></div>
+                    </td>
+                    <td class="scheme-table__storage"><span></span></td>
+                    <td class="scheme-table__price"><span class="scheme-table__price-value">нет<br>в наличии</span>
+                    </td>
+                    <td class="scheme-table__counter">
+                      <form class="counter counter_sm" action="#" name="counter-below">
+                        <button class="button button-minus button_sm button-minus_sm"></button>
+                        <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                        <button class="button button-plus button_sm button-plus_sm"></button>
+                      </form>
+                    </td>
+                  </tr>
+                  <tr class="scheme-table__item">
+                    <td class="scheme-table__number">A4</td>
+                    <td class="scheme-table__article">957117020</td>
+                    <td class="scheme-table__name">
+                      <div class="scheme-table__inner">Halbgasarretierung kpl.</div>
+                    </td>
+                    <td class="scheme-table__dropdown"><i class="min-photo"><svg class="photo-icon pop-up-js">
+<use xlink:href="#photo-icon" class="photo-icon__inner pop-up-js"></use>
+</svg></i>
+                      <div class="pop-up pop-up-js pop-up-js-window"><img class="pop-up__img" src="images/popup-img.jpg" alt="Pop-up image"/></div>
+                    </td>
+                    <td class="scheme-table__storage"><span>&gt; 10</span></td>
+                    <td class="scheme-table__price"><span class="scheme-table__price-value scheme-table__price-value_blue">3.99</span>
+                    </td>
+                    <td class="scheme-table__counter">
+                      <form class="counter counter_sm" action="#" name="counter-below">
+                        <button class="button button-minus button_sm button-minus_sm"></button>
+                        <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                        <button class="button button-plus button_sm button-plus_sm"></button>
+                      </form>
+                    </td>
+                  </tr>
+                  <tr class="scheme-table__item">
+                    <td class="scheme-table__number">A1</td>
+                    <td class="scheme-table__article">394114605</td>
+                    <td class="scheme-table__name">
+                      <div class="scheme-table__inner">Tank kpl. mit Mechanik, blau</div>
+                    </td>
+                    <td class="scheme-table__dropdown"><i class="min-photo"><svg class="photo-icon pop-up-js">
+<use xlink:href="#photo-icon" class="photo-icon__inner pop-up-js"></use>
+</svg></i>
+                      <div class="pop-up pop-up-js pop-up-js-window"><img class="pop-up__img" src="images/popup-img.jpg" alt="Pop-up image"/></div>
+                      <div class="scheme-table__dropdown-inner"><a class="scheme-table__dropdown-link" href="#">Аналоги</a><i class="triangle triangle_sm"></i></div>
+                    </td>
+                    <td class="scheme-table__storage"><span>1</span></td>
+                    <td class="scheme-table__price"><span class="scheme-table__price-value scheme-table__price-value_blue">3.99</span>
+                    </td>
+                    <td class="scheme-table__counter">
+                      <form class="counter counter_sm" action="#" name="counter-below">
+                        <button class="button button-minus button_sm button-minus_sm"></button>
+                        <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                        <button class="button button-plus button_sm button-plus_sm"></button>
+                      </form>
+                    </td>
+                  </tr>
+                  <tr class="scheme-table__item">
+                    <td class="scheme-table__number">A2</td>
+                    <td class="scheme-table__article">957117020</td>
+                    <td class="scheme-table__name">
+                      <div class="scheme-table__inner">Gasmechanik kpl.</div>
+                    </td>
+                    <td class="scheme-table__dropdown"><i class="min-photo"><svg class="photo-icon pop-up-js">
+<use xlink:href="#photo-icon" class="photo-icon__inner pop-up-js"></use>
+</svg></i>
+                      <div class="pop-up pop-up-js pop-up-js-window"><img class="pop-up__img" src="images/popup-img.jpg" alt="Pop-up image"/></div>
+                    </td>
+                    <td class="scheme-table__storage"><span>2</span></td>
+                    <td class="scheme-table__price"><span class="scheme-table__price-value scheme-table__price-value_blue">3.99</span>
+                    </td>
+                    <td class="scheme-table__counter">
+                      <form class="counter counter_sm" action="#" name="counter-below">
+                        <button class="button button-minus button_sm button-minus_sm"></button>
+                        <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                        <button class="button button-plus button_sm button-plus_sm"></button>
+                      </form>
+                    </td>
+                  </tr>
+                  <tr class="scheme-table__item">
+                    <td class="scheme-table__number">A3</td>
+                    <td class="scheme-table__article">394114605</td>
+                    <td class="scheme-table__name">
+                      <div class="scheme-table__inner">Schraubeinsatz</div>
+                    </td>
+                    <td class="scheme-table__dropdown"><i class="min-photo"><svg class="photo-icon pop-up-js">
+<use xlink:href="#photo-icon" class="photo-icon__inner pop-up-js"></use>
+</svg></i>
+                      <div class="pop-up pop-up-js pop-up-js-window"><img class="pop-up__img" src="images/popup-img.jpg" alt="Pop-up image"/></div>
+                    </td>
+                    <td class="scheme-table__storage"><span></span></td>
+                    <td class="scheme-table__price"><span class="scheme-table__price-value">нет<br>в наличии</span>
+                    </td>
+                    <td class="scheme-table__counter">
+                      <form class="counter counter_sm" action="#" name="counter-below">
+                        <button class="button button-minus button_sm button-minus_sm"></button>
+                        <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                        <button class="button button-plus button_sm button-plus_sm"></button>
+                      </form>
+                    </td>
+                  </tr>
+                  <tr class="scheme-table__item">
+                    <td class="scheme-table__number">A4</td>
+                    <td class="scheme-table__article">957117020</td>
+                    <td class="scheme-table__name">
+                      <div class="scheme-table__inner">Halbgasarretierung kpl.</div>
+                    </td>
+                    <td class="scheme-table__dropdown"><i class="min-photo"><svg class="photo-icon pop-up-js">
+<use xlink:href="#photo-icon" class="photo-icon__inner pop-up-js"></use>
+</svg></i>
+                      <div class="pop-up pop-up-js pop-up-js-window"><img class="pop-up__img" src="images/popup-img.jpg" alt="Pop-up image"/></div>
+                    </td>
+                    <td class="scheme-table__storage"><span>&gt; 10</span></td>
+                    <td class="scheme-table__price"><span class="scheme-table__price-value scheme-table__price-value_blue">3.99</span>
+                    </td>
+                    <td class="scheme-table__counter">
+                      <form class="counter counter_sm" action="#" name="counter-below">
+                        <button class="button button-minus button_sm button-minus_sm"></button>
+                        <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                        <button class="button button-plus button_sm button-plus_sm"></button>
+                      </form>
+                    </td>
+                  </tr>
+                  <tr class="scheme-table__item">
+                    <td class="scheme-table__number">A1</td>
+                    <td class="scheme-table__article">394114605</td>
+                    <td class="scheme-table__name">
+                      <div class="scheme-table__inner">Tank kpl. mit Mechanik, blau</div>
+                    </td>
+                    <td class="scheme-table__dropdown"><i class="min-photo"><svg class="photo-icon pop-up-js">
+<use xlink:href="#photo-icon" class="photo-icon__inner pop-up-js"></use>
+</svg></i>
+                      <div class="pop-up pop-up-js pop-up-js-window"><img class="pop-up__img" src="images/popup-img.jpg" alt="Pop-up image"/></div>
+                      <div class="scheme-table__dropdown-inner"><a class="scheme-table__dropdown-link" href="#">Аналоги</a><i class="triangle triangle_sm"></i></div>
+                    </td>
+                    <td class="scheme-table__storage"><span>1</span></td>
+                    <td class="scheme-table__price"><span class="scheme-table__price-value scheme-table__price-value_blue">3.99</span>
+                    </td>
+                    <td class="scheme-table__counter">
+                      <form class="counter counter_sm" action="#" name="counter-below">
+                        <button class="button button-minus button_sm button-minus_sm"></button>
+                        <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                        <button class="button button-plus button_sm button-plus_sm"></button>
+                      </form>
+                    </td>
+                  </tr>
+                  <tr class="scheme-table__item">
+                    <td class="scheme-table__number">A2</td>
+                    <td class="scheme-table__article">957117020</td>
+                    <td class="scheme-table__name">
+                      <div class="scheme-table__inner">Gasmechanik kpl.</div>
+                    </td>
+                    <td class="scheme-table__dropdown"><i class="min-photo"><svg class="photo-icon pop-up-js">
+<use xlink:href="#photo-icon" class="photo-icon__inner pop-up-js"></use>
+</svg></i>
+                      <div class="pop-up pop-up-js pop-up-js-window"><img class="pop-up__img" src="images/popup-img.jpg" alt="Pop-up image"/></div>
+                    </td>
+                    <td class="scheme-table__storage"><span>2</span></td>
+                    <td class="scheme-table__price"><span class="scheme-table__price-value scheme-table__price-value_blue">3.99</span>
+                    </td>
+                    <td class="scheme-table__counter">
+                      <form class="counter counter_sm" action="#" name="counter-below">
+                        <button class="button button-minus button_sm button-minus_sm"></button>
+                        <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                        <button class="button button-plus button_sm button-plus_sm"></button>
+                      </form>
+                    </td>
+                  </tr>
+                  <tr class="scheme-table__item">
+                    <td class="scheme-table__number">A3</td>
+                    <td class="scheme-table__article">394114605</td>
+                    <td class="scheme-table__name">
+                      <div class="scheme-table__inner">Schraubeinsatz</div>
+                    </td>
+                    <td class="scheme-table__dropdown"><i class="min-photo"><svg class="photo-icon pop-up-js">
+<use xlink:href="#photo-icon" class="photo-icon__inner pop-up-js"></use>
+</svg></i>
+                      <div class="pop-up pop-up-js pop-up-js-window"><img class="pop-up__img" src="images/popup-img.jpg" alt="Pop-up image"/></div>
+                    </td>
+                    <td class="scheme-table__storage"><span></span></td>
+                    <td class="scheme-table__price"><span class="scheme-table__price-value">нет<br>в наличии</span>
+                    </td>
+                    <td class="scheme-table__counter">
+                      <form class="counter counter_sm" action="#" name="counter-below">
+                        <button class="button button-minus button_sm button-minus_sm"></button>
+                        <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                        <button class="button button-plus button_sm button-plus_sm"></button>
+                      </form>
+                    </td>
+                  </tr>
+                  <tr class="scheme-table__item">
+                    <td class="scheme-table__number">A4</td>
+                    <td class="scheme-table__article">957117020</td>
+                    <td class="scheme-table__name">
+                      <div class="scheme-table__inner">Halbgasarretierung kpl.</div>
+                    </td>
+                    <td class="scheme-table__dropdown"><i class="min-photo"><svg class="photo-icon pop-up-js">
+<use xlink:href="#photo-icon" class="photo-icon__inner pop-up-js"></use>
+</svg></i>
+                      <div class="pop-up pop-up-js pop-up-js-window"><img class="pop-up__img" src="images/popup-img.jpg" alt="Pop-up image"/></div>
+                    </td>
+                    <td class="scheme-table__storage"><span>&gt; 10</span></td>
+                    <td class="scheme-table__price"><span class="scheme-table__price-value scheme-table__price-value_blue">3.99</span>
+                    </td>
+                    <td class="scheme-table__counter">
+                      <form class="counter counter_sm" action="#" name="counter-below">
+                        <button class="button button-minus button_sm button-minus_sm"></button>
+                        <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                        <button class="button button-plus button_sm button-plus_sm"></button>
+                      </form>
+                    </td>
+                  </tr>
+                  <tr class="scheme-table__item">
+                    <td class="scheme-table__number">A1</td>
+                    <td class="scheme-table__article">394114605</td>
+                    <td class="scheme-table__name">
+                      <div class="scheme-table__inner">Tank kpl. mit Mechanik, blau</div>
+                    </td>
+                    <td class="scheme-table__dropdown"><i class="min-photo"><svg class="photo-icon pop-up-js">
+<use xlink:href="#photo-icon" class="photo-icon__inner pop-up-js"></use>
+</svg></i>
+                      <div class="pop-up pop-up-js pop-up-js-window"><img class="pop-up__img" src="images/popup-img.jpg" alt="Pop-up image"/></div>
+                      <div class="scheme-table__dropdown-inner"><a class="scheme-table__dropdown-link" href="#">Аналоги</a><i class="triangle triangle_sm"></i></div>
+                    </td>
+                    <td class="scheme-table__storage"><span>1</span></td>
+                    <td class="scheme-table__price"><span class="scheme-table__price-value scheme-table__price-value_blue">3.99</span>
+                    </td>
+                    <td class="scheme-table__counter">
+                      <form class="counter counter_sm" action="#" name="counter-below">
+                        <button class="button button-minus button_sm button-minus_sm"></button>
+                        <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                        <button class="button button-plus button_sm button-plus_sm"></button>
+                      </form>
+                    </td>
+                  </tr>
+                  <tr class="scheme-table__item">
+                    <td class="scheme-table__number">A2</td>
+                    <td class="scheme-table__article">957117020</td>
+                    <td class="scheme-table__name">
+                      <div class="scheme-table__inner">Gasmechanik kpl.</div>
+                    </td>
+                    <td class="scheme-table__dropdown"><i class="min-photo"><svg class="photo-icon pop-up-js">
+<use xlink:href="#photo-icon" class="photo-icon__inner pop-up-js"></use>
+</svg></i>
+                      <div class="pop-up pop-up-js pop-up-js-window"><img class="pop-up__img" src="images/popup-img.jpg" alt="Pop-up image"/></div>
+                    </td>
+                    <td class="scheme-table__storage"><span>2</span></td>
+                    <td class="scheme-table__price"><span class="scheme-table__price-value scheme-table__price-value_blue">3.99</span>
+                    </td>
+                    <td class="scheme-table__counter">
+                      <form class="counter counter_sm" action="#" name="counter-below">
+                        <button class="button button-minus button_sm button-minus_sm"></button>
+                        <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                        <button class="button button-plus button_sm button-plus_sm"></button>
+                      </form>
+                    </td>
+                  </tr>
+                  <tr class="scheme-table__item">
+                    <td class="scheme-table__number">A3</td>
+                    <td class="scheme-table__article">394114605</td>
+                    <td class="scheme-table__name">
+                      <div class="scheme-table__inner">Schraubeinsatz</div>
+                    </td>
+                    <td class="scheme-table__dropdown"><i class="min-photo"><svg class="photo-icon pop-up-js">
+<use xlink:href="#photo-icon" class="photo-icon__inner pop-up-js"></use>
+</svg></i>
+                      <div class="pop-up pop-up-js pop-up-js-window"><img class="pop-up__img" src="images/popup-img.jpg" alt="Pop-up image"/></div>
+                    </td>
+                    <td class="scheme-table__storage"><span></span></td>
+                    <td class="scheme-table__price"><span class="scheme-table__price-value">нет<br>в наличии</span>
+                    </td>
+                    <td class="scheme-table__counter">
+                      <form class="counter counter_sm" action="#" name="counter-below">
+                        <button class="button button-minus button_sm button-minus_sm"></button>
+                        <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                        <button class="button button-plus button_sm button-plus_sm"></button>
+                      </form>
+                    </td>
+                  </tr>
+                  <tr class="scheme-table__item">
+                    <td class="scheme-table__number">A4</td>
+                    <td class="scheme-table__article">957117020</td>
+                    <td class="scheme-table__name">
+                      <div class="scheme-table__inner">Halbgasarretierung kpl.</div>
+                    </td>
+                    <td class="scheme-table__dropdown"><i class="min-photo"><svg class="photo-icon pop-up-js">
+<use xlink:href="#photo-icon" class="photo-icon__inner pop-up-js"></use>
+</svg></i>
+                      <div class="pop-up pop-up-js pop-up-js-window"><img class="pop-up__img" src="images/popup-img.jpg" alt="Pop-up image"/></div>
+                    </td>
+                    <td class="scheme-table__storage"><span>&gt; 10</span></td>
+                    <td class="scheme-table__price"><span class="scheme-table__price-value scheme-table__price-value_blue">3.99</span>
+                    </td>
+                    <td class="scheme-table__counter">
+                      <form class="counter counter_sm" action="#" name="counter-below">
+                        <button class="button button-minus button_sm button-minus_sm"></button>
+                        <input class="input-quantity input-quantity_sm" type="number" step="1" min="1" value="1"/>
+                        <button class="button button-plus button_sm button-plus_sm"></button>
+                      </form>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </section>
+          <section class="text-section">
+            <p class="additional-text text-section__additional-text">
+              Но предприниматели в сети интернет, которые представляют собой яркий пример
+              континентально-европейского типа политической культуры, будут объединены в целые
+              кластеры себе подобных. Таким образом, постоянный количественный рост и сфера нашей
+              активности позволяет оценить значение инновационных методов управления процессами.
+              Задача организации, в особенности же экономическая повестка сегодняшнего дня влечет
+              за собой процесс внедрения и модернизации новых принципов формирования материально-технической и кадровой базы. И нет сомнений,
+              что активно развивающиеся страны третьего мира освещают чрезвычайно интересные особенности картины в целом, однако конкретные выводы,
+              разумеется, превращены в посмешище, хотя само их существование приносит несомненную пользу обществу! Таким образом, социально-экономическое
+              развитие предоставляет широкие возможности для переосмысления внешнеэкономических политик.
+            </p>
+          </section>
+        </div>
+      </main>
+    </div>
+    <footer class="footer body__footer">
+      <div class="wrapper">
+        <div class="footer__inner">
+          <section class="footer-nav footer__footer-nav">
+            <ul class="footer-nav-list"><a class="footer-nav-list__link" href="#">
+                <li class="footer-nav-list__item">Главная</li></a><a class="footer-nav-list__link" href="#">
+                <li class="footer-nav-list__item">Дилерам</li></a><a class="footer-nav-list__link" href="#">
+                <li class="footer-nav-list__item">О компании</li></a><a class="footer-nav-list__link" href="#">
+                <li class="footer-nav-list__item">Сервис-центры</li></a><a class="footer-nav-list__link" href="#">
+                <li class="footer-nav-list__item">Акции</li></a><a class="footer-nav-list__link" href="#">
+                <li class="footer-nav-list__item">Контакты</li></a><a class="footer-nav-list__link footer-nav-list__link_last" href="#">
+                <li class="footer-nav-list__item">Инструкция</li></a></ul>
+          </section>
+          <section class="phone-wholesale footer__phone-wholesale"><span class="phone-wholesale__title">Оптовые&nbsp;продажи:</span><a class="phone-wholesale__link" href="tel:+375291761767">+375 29 176-176-7</a><a class="phone-wholesale__link" href="tel:+375296202045">+375 29 620-20-45</a><a class="phone-wholesale__link" href="tel:+375445552084">+375 44 555-20-84</a></section>
+          <section class="phone-accounting footer__phone-accounting"><span class="phone-accounting__title">Бухгалтерия</span><a class="phone-accounting__link" href="tel:+375172244002">+375 17 224-40-02</a></section>
+          <section class="phone-sale footer__phone-sale"><span class="phone-sale__title">Отдел&nbsp;продаж</span><a class="phone-sale__link" href="tel:+375172244001">+375 17 224-40-01</a></section>
+          <section class="copyright footer__copyright"><span>СИБ-инструмент<br> © 2017 </span><br><span>Информация, представленная на сайте не является договором публичной оферты.</span></section>
+        </div>
+      </div>
+    </footer>
+    <script src="lib/jquery-3.4.1.min.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="lib/fancybox/jquery.fancybox.min.js"></script>
+    <script src="lib/easyZoom/easyzoom.js"></script>
+    <script src="js/common.js"></script>
+  </body>
+</html>

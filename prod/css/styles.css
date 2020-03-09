@@ -704,19 +704,29 @@ body.compensate-for-scrollbar {
 }
 
 .slider-main {
+  font-size: 0;
   display: flex;
   flex-wrap: wrap;
   margin-left: -0.75rem;
   margin-right: -0.75rem;
-  flex-wrap: nowrap;
 }
 
 .slider-main__image {
-  box-sizing: border-box;
   word-wrap: break-word;
-  margin-left: 0.75rem;
-  margin-right: 0.75rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  box-sizing: border-box;
   font-size: 0;
+}
+
+.slider-main__image_left {
+  flex: 1 1 69.2%;
+  max-width: 69.2%;
+}
+
+.slider-main__image_right {
+  flex: 1 1 30.8%;
+  max-width: 30.8%;
 }
 
 .search-section {

@@ -759,13 +759,23 @@ body.compensate-for-scrollbar {
 }
 
 .slider-main {
+  font-size: 0;
   .row-flex();
-  flex-wrap: nowrap;
 
   &__image {
-    .col();
-
+    .col-padding();
+    box-sizing: border-box;
     font-size: 0;
+
+    &_left{
+      flex: 1 1 69.2%;
+      max-width: 69.2%;
+    }
+
+    &_right{
+      flex: 1 1 30.8%;
+      max-width: 30.8%;
+    }
   }
 }
 
