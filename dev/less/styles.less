@@ -92,6 +92,8 @@ html {
   }
 }
 
+
+
 *,
 *:before,
 *:after {
@@ -380,6 +382,7 @@ body.compensate-for-scrollbar {
 
 .scheme-table__dropdown-inner {
   display: inline-block;
+  line-height: 33px;
 }
 
 .triangle {
@@ -395,10 +398,10 @@ body.compensate-for-scrollbar {
   transition: all 0.125s ease-in-out;
 
   .xs-block( {
-    top: 45%;
-  }
+      top: 45%;
+    }
 
-);
+  );
 
   &_sm {
     position: relative;
@@ -767,12 +770,12 @@ body.compensate-for-scrollbar {
     box-sizing: border-box;
     font-size: 0;
 
-    &_left{
+    &_left {
       flex: 1 1 69.2%;
       max-width: 69.2%;
     }
 
-    &_right{
+    &_right {
       flex: 1 1 30.8%;
       max-width: 30.8%;
     }
@@ -2001,12 +2004,6 @@ body.compensate-for-scrollbar {
   border-left: none;
   border-right: none;
 
-  .xxs-block( {
-      border: 1px solid #BDBDBD;
-    }
-
-  );
-
   &_md {
     width: 40px;
     height: 22px;
@@ -2032,12 +2029,6 @@ body.compensate-for-scrollbar {
   height: 37px;
   border: 1px solid #BDBDBD;
   background: #ffffff;
-
-  .xxs-block( {
-      display: none;
-    }
-
-  );
 
   &-minus {
     border-radius: 3px 0px 0px 3px;
@@ -2337,6 +2328,7 @@ input[type=radio] {
 
   );
 
+
   .xs-block( {
       font-size: 12px;
 
@@ -2509,7 +2501,7 @@ input[type=radio] {
   padding-right: 1rem;
   display: inline-block;
   position: relative;
-  top: 2px;
+  top: 3px;
   opacity: 0;
   cursor: pointer;
 
