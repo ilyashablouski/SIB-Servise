@@ -1,0 +1,75 @@
+extends layouts/main-no-login.pug
+
+block variables
+  - var pageTitle = 'Страница со схемой';
+  - var scriptSrc = 'js/common.js';
+  - var link = 'css/styles.css';
+
+  - 
+    var tableDataArray = [
+      {number: 'A1', article: '394114605', name: 'Tank kpl. mit Mechanik, blau', dropdown: 'Аналоги', storage: '1', price: true},
+      {number: 'A2', article: '957117020', name: 'Gasmechanik kpl.', dropdown: '', storage: '2', price: true, class: 'js-analog is-hidden'},
+      {number: 'A3', article: '394114605', name: 'Schraubeinsatz', dropdown: '', storage: '', price: false, class: 'js-analog is-hidden'},
+      {number: 'A4', article: '957117020', name: 'Halbgasarretierung kpl.', dropdown: '', storage: '> 10', price: true},
+    ];
+
+block content
+  .content
+    main.main.content__main
+      .wrapper
+        //- Product section
+        section.product-section
+          .breadcrumb.product-section__breadcrumb
+            a.breadcrumb__item(href='#') Главная
+            a.breadcrumb__item(href='#') Поиск&nbsp;запчастей&nbsp;по&nbsp;каталогу
+            a.breadcrumb__item(href='#') BOSCH
+          
+          //- Scheme block
+          .scheme-container
+            .scheme-container__scheme
+              .scheme-box
+                .scheme-box__header
+                  span DPC 8132
+                .scheme-box__inner
+                  //- Scheme slider
+                  include slider.html
+                  
+            //- Scheme block description with table
+            .scheme-container__description
+              table.scheme-table             
+                tr.scheme-table__header
+                  th 
+                    h6.h6.scheme-table__header-number №
+                  th 
+                    h6.h6.scheme-table__header-article Артикул
+                  th 
+                    h6.h6.scheme-table__header-name Наименование
+                  th(style='text-align: left')
+                  th
+                    h6.h6.scheme-table__header-storage Склад
+                  th(style='text-align: center;')
+                    h6.h6.scheme-table__header-price Цена
+                  th
+                +createTableItem(tableDataArray)
+                +createTableItem(tableDataArray)
+                +createTableItem(tableDataArray)
+
+                tr.scheme-table__header
+                  th(colspan='7', style='text-align: center;')
+                    h6.h6 Лист В
+                +createTableItem(tableDataArray)
+                +createTableItem(tableDataArray)
+                +createTableItem(tableDataArray)
+                +createTableItem(tableDataArray)
+
+        section.text-section
+          p.additional-text.text-section__additional-text
+            | Но предприниматели в сети интернет, которые представляют собой яркий пример
+            | континентально-европейского типа политической культуры, будут объединены в целые
+            | кластеры себе подобных. Таким образом, постоянный количественный рост и сфера нашей
+            | активности позволяет оценить значение инновационных методов управления процессами.
+            | Задача организации, в особенности же экономическая повестка сегодняшнего дня влечет
+            | за собой процесс внедрения и модернизации новых принципов формирования материально-технической и кадровой базы. И нет сомнений,
+            | что активно развивающиеся страны третьего мира освещают чрезвычайно интересные особенности картины в целом, однако конкретные выводы,
+            | разумеется, превращены в посмешище, хотя само их существование приносит несомненную пользу обществу! Таким образом, социально-экономическое
+            | развитие предоставляет широкие возможности для переосмысления внешнеэкономических политик.
