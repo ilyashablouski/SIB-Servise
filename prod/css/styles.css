@@ -299,6 +299,10 @@ input[type="number"]::-webkit-inner-spin-button {
   display: none;
 }
 
+.is-hidden {
+  display: none;
+}
+
 .is-show {
   visibility: visible !important;
   opacity: 1 !important;
@@ -306,6 +310,11 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .is-rotate {
   transform: rotate(-180deg);
+}
+
+.is-no-available {
+  display: inline-block;
+  text-align: center;
 }
 
 .easyzoom-flyout img {
@@ -1440,7 +1449,7 @@ body.compensate-for-scrollbar {
 }
 
 .counter {
-  display: flex;
+  display: inline-flex;
   margin-left: auto;
   font-size: 20px;
 }
@@ -1811,7 +1820,7 @@ input[type=radio] {
 }
 
 .scheme-table__counter {
-  padding-right: 1.8rem;
+  padding-right: 1.7rem;
   padding-left: 1.2rem;
 }
 
@@ -2343,8 +2352,107 @@ input[type=radio] {
     font-size: 12px;
   }
 
+  .scheme-table tr {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .scheme-table tr:first-child {
+    flex-wrap: nowrap;
+  }
+
+  .scheme-table td {
+    box-sizing: border-box;
+  }
+
+  .scheme-table th:nth-child(3) {
+    flex: 1 1 60%;
+    max-width: 60%;
+  }
+
+  .scheme-table th:nth-child(5) {
+    flex: 1 1 auto;
+  }
+
+  .scheme-table th:nth-child(6) {
+    flex: 1 1 auto;
+  }
+
+  .scheme-table__header-number {
+    padding: 0 1.4rem;
+  }
+
+  .scheme-table__header-storage {
+    padding-left: 0;
+    padding-right: 1.4rem;
+    text-align: right;
+  }
+
+  .scheme-table__header-price {
+    padding-left: 0;
+    padding-right: 1.4rem;
+    text-align: right;
+  }
+
   .scheme-table__number {
     font-size: 12px;
+  }
+
+  .scheme-table__counter {
+    padding-right: 1.4rem;
+  }
+
+  .scheme-table__number {
+    flex: 0 1 auto;
+    padding: 0 1.4rem;
+  }
+
+  .scheme-table__article {
+    flex: 0 1 10.5rem;
+    max-width: 10.5rem;
+  }
+
+  .scheme-table__name {
+    order: 1;
+    flex: 1 1 33%;
+    max-width: 33%;
+  }
+
+  .scheme-table__storage {
+    margin-left: auto;
+    margin-right: 1rem;
+    padding-right: 0;
+    padding-left: 0;
+    order: 2;
+    flex: 0 1 5%;
+    text-align: center;
+  }
+
+  .scheme-table__price {
+    padding-right: 1.4rem;
+    order: 3;
+    flex: 0 1 8rem;
+    text-align: right;
+  }
+
+  .scheme-table__dropdown {
+    order: 4;
+    padding-left: 1.4rem;
+    flex: 1 1 50%;
+  }
+
+  .scheme-table__counter {
+    order: 5;
+    flex: 1 1 auto;
+    text-align: right;
+  }
+
+  .pop-up {
+    transform: translate(0%, 6px);
+  }
+
+  .pop-up:before {
+    left: 2%;
   }
 }
 
@@ -2417,5 +2525,10 @@ input[type=radio] {
 
   .scheme-table__number {
     font-size: 11px;
+  }
+
+  .scheme-table__article {
+    flex: 0 1 9rem;
+    max-width: 9rem;
   }
 }

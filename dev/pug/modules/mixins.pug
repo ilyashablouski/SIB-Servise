@@ -52,7 +52,7 @@ mixin productBlock(blocksQuantity)
 
 mixin createTableItem(tableDataArray)
   each obj, key in tableDataArray
-    tr.scheme-table__item
+    tr.scheme-table__item(class=obj.class)
       td.scheme-table__number= obj.number
       td.scheme-table__article= obj.article
       td.scheme-table__name
@@ -74,7 +74,7 @@ mixin createTableItem(tableDataArray)
         if obj.price === true
           span.scheme-table__price-value.scheme-table__price-value_blue 3.99
         else
-          span.scheme-table__price-value нет<br>в наличии
+          span.scheme-table__price-value.is-no-available нет<br>в&nbsp;наличии
       td.scheme-table__counter
         //- Product counter
         form.counter.counter_sm(action='#', name='counter-below')

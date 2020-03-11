@@ -90,8 +90,18 @@ window.addEventListener('DOMContentLoaded', () => {
     tableElement.addEventListener('click', (event) => {
       const target = event.target;
 
+      TODO: // Refactoring with switch/case conditions; do/while
       showPopup(target);
       showPopupAnalog(target);
+
+      if (target.classList.contains('scheme-table__dropdown-link')) {
+        let analogTarget = target.parentElement.parentElement.parentElement;
+
+        while (analogTarget) {
+          analogTarget = analogTarget.nextElementSibling;
+          console.log(analogTarget);
+        }
+      }
     });
   }
 

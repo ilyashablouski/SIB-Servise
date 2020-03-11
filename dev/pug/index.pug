@@ -8,8 +8,8 @@ block variables
   - 
     var tableDataArray = [
       {number: 'A1', article: '394114605', name: 'Tank kpl. mit Mechanik, blau', dropdown: 'Аналоги', storage: '1', price: true},
-      {number: 'A2', article: '957117020', name: 'Gasmechanik kpl.', dropdown: '', storage: '2', price: true},
-      {number: 'A3', article: '394114605', name: 'Schraubeinsatz', dropdown: '', storage: '', price: false},
+      {number: 'A2', article: '957117020', name: 'Gasmechanik kpl.', dropdown: '', storage: '2', price: true, class: 'js-analog'},
+      {number: 'A3', article: '394114605', name: 'Schraubeinsatz', dropdown: '', storage: '', price: false, class: 'js-analog'},
       {number: 'A4', article: '957117020', name: 'Halbgasarretierung kpl.', dropdown: '', storage: '> 10', price: true},
     ];
 
@@ -36,8 +36,7 @@ block content
                   
             //- Scheme block description with table
             .scheme-container__description
-              table.scheme-table
-              
+              table.scheme-table             
                 tr.scheme-table__header
                   th 
                     h6.h6.scheme-table__header-number №
