@@ -56,6 +56,25 @@ function showPopupAnalog(target) {
   }
 }
 
+/**
+ * Open/close analog element
+ *
+ * @param {object} target
+ */
+function showHideAnalogElement(target) {
+  let analogTarget = target.parentElement.parentElement.parentElement;
+  while (analogTarget) {
+    analogTarget = analogTarget.nextElementSibling;
+
+    if (analogTarget.classList.contains('js-analog')) {
+      analogTarget.classList.toggle('is-hidden');
+      console.log('Yes');
+    } else {
+      break;
+    }
+  }
+}
+
 // DOM loaded
 window.addEventListener('DOMContentLoaded', () => {
   /**
@@ -88,19 +107,16 @@ window.addEventListener('DOMContentLoaded', () => {
    */
   if (tableElement) {
     tableElement.addEventListener('click', (event) => {
+      event.preventDefault();
+
       const target = event.target;
 
-      TODO: // Refactoring with switch/case conditions; do/while
+      TODO: // Refactoring with switch/case conditions;
       showPopup(target);
       showPopupAnalog(target);
 
       if (target.classList.contains('scheme-table__dropdown-link')) {
-        let analogTarget = target.parentElement.parentElement.parentElement;
-
-        while (analogTarget) {
-          analogTarget = analogTarget.nextElementSibling;
-          console.log(analogTarget);
-        }
+        showHideAnalogElement(target);
       }
     });
   }
