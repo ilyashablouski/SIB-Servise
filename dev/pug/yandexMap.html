@@ -1,0 +1,20 @@
+<script type="text/javascript">
+  ymaps.ready(init);
+
+  function init() {
+    // Create map
+    var myMap = new ymaps.Map("map", {
+      center: [53.91960558, 27.70118669],
+      zoom: 12
+    }),
+    // Create geo object
+    myGeoObject = new ymaps.GeoObject({
+            geometry: {
+                type: "Point",
+                coordinates: [53.91934715, 27.69974355]
+            },
+  });
+  // Add geo object on map
+  myMap.geoObjects.add(myGeoObject);
+}
+</script>

@@ -18,7 +18,9 @@ html(lang='en')
     block content
     include ../modules/footer.pug
     block scripts
+      <script src="https://api-maps.yandex.ru/2.1/?apikey=b22e556f-9495-47ec-982f-f5c814cf72e6&lang=ru_RU" type="text/javascript"></script>
       script(src='lib/jquery-3.4.1.min.js')
       script(src= 'lib/fancybox/jquery.fancybox.min.js')
       script(src= 'lib/easyZoom/easyzoom.js')
       script(src= scriptSrc)
+      include ../yandexMap.html

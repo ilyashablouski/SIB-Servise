@@ -52,7 +52,6 @@ function css() {
       .pipe(less())
       .pipe(gcmq())
       .pipe(dest(config.css.dest))
-      .pipe(browserSync.stream())
       .pipe(autoprefixer({
         browsers: ['last 2 versions'],
       }))
@@ -62,7 +61,8 @@ function css() {
       .pipe(rename({
         extname: '.min.css',
       }))
-      .pipe(dest(config.css.dest));
+      .pipe(dest(config.css.dest))
+      .pipe(browserSync.stream());
 }
 
 /**
