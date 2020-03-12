@@ -3,7 +3,7 @@
   listItem(text: str, className: str)
 
 mixin listItem(className, text)
-  li(class= className) #{text}
+  a(class= className, href='#') #{text}
 
   //-
     Create product block
