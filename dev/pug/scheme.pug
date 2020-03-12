@@ -40,16 +40,16 @@ block content
               table.scheme-table             
                 tr.scheme-table__header
                   th 
-                    h6.h6.scheme-table__header-number №
+                    span.h6.scheme-table__header-number №
                   th 
-                    h6.h6.scheme-table__header-article Артикул
+                    span.h6.scheme-table__header-article Артикул
                   th 
-                    h6.h6.scheme-table__header-name Наименование
+                    span.h6.scheme-table__header-name Наименование
                   th(style='text-align: left')
                   th
-                    h6.h6.scheme-table__header-storage Склад
+                    span.h6.scheme-table__header-storage Склад
                   th(style='text-align: center;')
-                    h6.h6.scheme-table__header-price Цена
+                    span.h6.scheme-table__header-price Цена
                   th
                 +createTableItem(tableDataArray)
                 +createTableItem(tableDataArray)
@@ -57,7 +57,7 @@ block content
 
                 tr.scheme-table__header
                   th(colspan='7', style='text-align: center;')
-                    h6.h6 Лист В
+                    span.h6 Лист В
                 +createTableItem(tableDataArray)
                 +createTableItem(tableDataArray)
                 +createTableItem(tableDataArray)

@@ -343,30 +343,35 @@ a {
   color: #2560B9;
 }
 
-h2.h2 {
+h2,
+.h2 {
   font-size: 3.4rem;
 }
 
-h3.h3 {
+h3,
+.h3 {
   font-size: 2.6rem;
   font-family: Arial;
   font-weight: 700;
   color: #FFFFFF;
 }
 
-h4.h4 {
+h4,
+.h4 {
   font-size: 2.4rem;
   font-weight: 600;
   color: #545252;
 }
 
-h5.h5 {
+h5,
+.h5 {
   font-size: 1.8rem;
   font-weight: 600;
   color: #FFFFFF;
 }
 
-h6.h6 {
+h6,
+.h6 {
   font-size: 13px;
   font-weight: 600;
   color: #545252;
@@ -1953,7 +1958,8 @@ input[type=radio] {
 }
 
 @media screen and (max-width: 1200px) {
-  h6.h6 {
+  h6,
+  .h6 {
     font-size: 16px;
   }
 
@@ -2196,7 +2202,8 @@ input[type=radio] {
 }
 
 @media screen and (max-width: 720px) {
-  h6.h6 {
+  h6,
+  .h6 {
     font-size: 14px;
   }
 
@@ -2510,7 +2517,8 @@ input[type=radio] {
 }
 
 @media screen and (max-width: 450px) {
-  h6.h6 {
+  h6,
+  .h6 {
     font-size: 12px;
   }
 
