@@ -149,11 +149,15 @@ button,
 input[type="search"],
 input[type="tel"],
 input[type="text"],
+input[type="button"],
+input[type="submit"] 
 textarea {
 
   font: inherit;
   outline: none;
   box-sizing: border-box;
+  // Reset appearance at Safari
+  -webkit-appearance: none;
 
   &:focus::-webkit-input-placeholder {
     color: transparent;
@@ -217,6 +221,15 @@ input[type="search"]::-webkit-search-results-decoration {
 
 input[type="number"]::-webkit-inner-spin-button {
   display: none;
+}
+
+
+img {
+  .ie10( {
+      width: 100%;
+    }
+
+  );
 }
 
 .js-analog {

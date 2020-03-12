@@ -4,12 +4,13 @@ block variables
 doctype html
 html(lang='en')
   head
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     title= pageTitle
-    meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
-    link(rel='stylesheet', href=link)
+    link(rel='stylesheet', href=linkMinCss)
     link(rel='stylesheet', href='lib/fancybox/jquery.fancybox.min.css')
-    link(rel='stylesheet', href='lib/easyZoom/easyzoom.js')
+    link(rel='stylesheet', href='lib/easyZoom/easyzoom.css')
 
   body.body
     include ../svg.html
@@ -18,7 +19,6 @@ html(lang='en')
     include ../modules/footer.pug
     block scripts
       script(src='lib/jquery-3.4.1.min.js')
-      script(src= 'js/slider.js')
       script(src= 'lib/fancybox/jquery.fancybox.min.js')
       script(src= 'lib/easyZoom/easyzoom.js')
       script(src= scriptSrc)
