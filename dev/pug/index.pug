@@ -31,8 +31,8 @@ block content
                     img(src='images/product/product-1_thumbnail.jpg', alt='Thumbnail 1')
                 label.product-block-img__label
                   input.product-block-img__input(type='radio', name='button-group')
-                  a.block-img.block-img_sm(href='images/product/product-2_zoom.jpg', data-standard='images/product/product-2_standart.jpg')
-                    img(src='images/product/product-2_thumbnail.jpg', alt='Thumbnail 2')
+                  a.block-img.block-img_sm(href='images/product/product-1_zoom.jpg', data-standard='images/product/product-1_standart.jpg')
+                    img(src='images/product/product-1_thumbnail.jpg', alt='Thumbnail 2')
 
               //- Large image
               .block-img.block-img_lg.easyzoom.easyzoom--overlay.easyzoom--with-thumbnails
@@ -74,11 +74,15 @@ block content
             label.tab__title.is-next-tab(for='tab2') Аналоги
 
             //- Products tab
-            .tab.tab_first
+            .tab.tab_products
               .tab__content
-                +productBlock(6)
-
+                a.product-block__item-link(href='') Корпус&nbsp;редуктора&nbsp;GWS8
+                a.product-block__item-link(href='') Корпус&nbsp;редуктора&nbsp;GWS8
+                a.product-block__item-link(href='') Корпус&nbsp;редуктора&nbsp;GWS8
+                a.product-block__item-link(href='') Корпус&nbsp;редуктора&nbsp;GWS8
+                a.product-block__item-link(href='') Корпус&nbsp;редуктора&nbsp;GWS8
+                a.product-block__item-link(href='') Корпус&nbsp;редуктора&nbsp;GWS8
             //- Analogs tab
-            .tab.tab_second
+            .tab.tab_analogs
               .tab__content
                 +productBlock(12)

@@ -106,6 +106,7 @@ main {
 }
 
 img {
+  width: 100%;
   max-width: 100%;
   height: auto;
 }
@@ -1339,7 +1340,7 @@ body.compensate-for-scrollbar {
 }
 
 .product-block__item-link:hover {
-  border-bottom: 0.5px solid #B7B7B7;
+  border-bottom: 1px solid #B7B7B7;
 }
 
 .product-block__inner {
@@ -1348,7 +1349,6 @@ body.compensate-for-scrollbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex: 1 1 50%;
 }
 
 .product-block__stock {
@@ -1361,10 +1361,12 @@ body.compensate-for-scrollbar {
 }
 
 .product-block__inner:first-child {
+  flex: 0 1 33.15789474%;
   max-width: 378px;
 }
 
 .product-block__inner:last-child {
+  flex: 0 1 46.14%;
   max-width: 526px;
   margin-left: 1rem;
 }
@@ -1469,7 +1471,7 @@ body.compensate-for-scrollbar {
 }
 
 .product-price-container {
-  flex: 1 1 20%;
+  flex: 1 1 61%;
   max-width: 321px;
 }
 
@@ -1667,12 +1669,20 @@ input[type=radio] {
   border-right: 1px solid #3496C5;
 }
 
-#tab1:checked ~ .tab_first {
+#tab1:checked ~ .tab_products {
   display: inline-block;
 }
 
-#tab2:checked ~ .tab_second {
+#tab2:checked ~ .tab_analogs {
   display: inline-block;
+}
+
+.tab_products {
+  max-width: 212px;
+}
+
+.tab_products .product-block__item-link {
+  margin: 1.7rem 0 1.2rem;
 }
 
 .is-next-tab {
@@ -1907,6 +1917,16 @@ input[type=radio] {
   height: 15px;
 }
 
+@media screen and (min-width: 0 \0) {
+  .tab__title {
+    transform: translate(0, -103%);
+  }
+
+  .is-next-tab {
+    transform: translate(109%, -103%);
+  }
+}
+
 @media (max-width: 1200px) {
   html {
     font-size: 8.89px;
@@ -2112,7 +2132,8 @@ input[type=radio] {
   }
 
   .product-block__inner:first-child {
-    justify-content: start;
+    flex: 0 1 53.86%;
+    justify-content: flex-start;
   }
 
   .counter_sm {
@@ -2332,6 +2353,14 @@ input[type=radio] {
     display: block;
   }
 
+  .product-block__inner:first-child {
+    flex: 0 1 100%;
+  }
+
+  .product-block__inner:last-child {
+    flex: 0 1 100%;
+  }
+
   .block-img_lg {
     margin-right: 0;
   }
@@ -2346,6 +2375,8 @@ input[type=radio] {
 
   .product-block__stock {
     font-size: 12px;
+    margin-top: 1rem;
+    margin-bottom: auto;
   }
 
   .tab__product-block {

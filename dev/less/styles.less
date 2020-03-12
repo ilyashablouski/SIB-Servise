@@ -1746,7 +1746,7 @@ body.compensate-for-scrollbar {
     color: #545252;
 
     &:hover {
-      border-bottom: 0.5px solid #B7B7B7;
+      border-bottom: 1px solid #B7B7B7;
     }
   }
 
@@ -1756,7 +1756,6 @@ body.compensate-for-scrollbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex: 1 1 50%;
   }
 
   &__stock {
@@ -1776,18 +1775,33 @@ body.compensate-for-scrollbar {
 }
 
 .product-block__inner:first-child {
+  flex: 0 1 33.1578947368%;
   max-width: 378px;
 
   .md-block( {
-      justify-content: start;
+      flex: 0 1 53.86%;
+      justify-content: flex-start;
+    }
+
+  );
+
+  .xs-block( {
+      flex: 0 1 100%;
     }
 
   );
 }
 
 .product-block__inner:last-child {
+  flex: 0 1 46.14%;
   max-width: 526px;
   margin-left: 1rem;
+
+  .xs-block( {
+      flex: 0 1 100%;
+    }
+
+  );
 }
 
 
@@ -1956,7 +1970,6 @@ body.compensate-for-scrollbar {
   }
 
   &__input-quantity {
-
     .md-block( {
         width: 50px;
         height: 28px;
@@ -1967,7 +1980,7 @@ body.compensate-for-scrollbar {
 }
 
 .product-price-container {
-  flex: 1 1 20%;
+  flex: 1 1 61%;
   max-width: 321px;
 }
 
@@ -2162,7 +2175,9 @@ body.compensate-for-scrollbar {
   margin-right: 2rem;
 
   .xs-block( {
-      font-size: 12px
+      font-size: 12px;
+      margin-top: 1rem;
+      margin-bottom: auto;
     }
 
   );
@@ -2210,6 +2225,12 @@ input[type=radio] {
     border-left: 1px solid #DBDBDB;
     border-right: 1px solid #DBDBDB;
     transform: translate(0, calc(-100% - 1.4px));
+
+    .ie10( {
+        transform: translate(0, -103%);
+      }
+
+    );
   }
 }
 
@@ -2221,17 +2242,30 @@ input[type=radio] {
   border-right: 1px solid #3496C5;
 }
 
-#tab1:checked~.tab_first {
+#tab1:checked~.tab_products {
   display: inline-block;
 }
 
-#tab2:checked~.tab_second {
+#tab2:checked~.tab_analogs {
   display: inline-block;
 }
 
+.tab_products {
+  max-width: 212px;
+}
+
+.tab_products .product-block__item-link {
+  margin: 1.7rem 0 1.2rem;
+}
 
 .is-next-tab {
   transform: translate(calc(100% + 2px + 1.3rem), calc(-100% - 1.4px));
+
+  .ie10( {
+      transform: translate(109%, -103%);
+    }
+
+  );
 }
 
 // End of tabs
