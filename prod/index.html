@@ -234,7 +234,7 @@
         <div class="wrapper">
           <h2 class="h2 map-section__h2">Офис в Минске</h2>
           <div class="map map-section__map">
-            <!-- Yandex maps Container--><div id="map" style="width: 600px; height: 400px"></div>
+            <!-- Yandex maps Container--><div id="map" style="width: 100%; height: 100%"></div>
           </div>
           <div class="subscribe-block">
             <div class="subscribe-block__img"><img src="images/icons/icon-subscribe-form.png" alt="Subscribe image"></div>
@@ -289,13 +289,12 @@
     }),
     // Create geo object
     myGeoObject = new ymaps.GeoObject({
-            // Описание геометрии.
             geometry: {
                 type: "Point",
                 coordinates: [53.91934715, 27.69974355]
             },
   });
-  // Add geo object
+  // Add geo object on map
   myMap.geoObjects.add(myGeoObject);
 }
 </script>
