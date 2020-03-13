@@ -2,7 +2,8 @@
 <html lang="en">
   <head><meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Страница со схемой</title>
+    <title>Страница со схемой</title><link rel="preconnect" href="//api-maps.yandex.ru">
+<link rel="dns-prefetch" href="//api-maps.yandex.ru">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/styles.min.css">
     <link rel="stylesheet" href="lib/fancybox/jquery.fancybox.min.css">
@@ -794,6 +795,31 @@
     <script src="lib/jquery-3.4.1.min.js"></script>
     <script src="lib/fancybox/jquery.fancybox.min.js"></script>
     <script src="lib/easyZoom/easyzoom.js"></script>
-    <script src="js/common.js"></script>
+    <script src="js/common.js"></script><script type="text/javascript">
+  setTimeout(function () {
+    var elem = document.createElement('script');
+    elem.type = 'text/javascript';
+    elem.src = '//api-maps.yandex.ru/2.1/?apikey=b22e556f-9495-47ec-982f-f5c814cf72e6&lang=ru_RU&onload=getYaMap';
+    document.getElementsByTagName('body')[0].appendChild(elem);
+  }, 500);
+
+
+  function getYaMap() {
+    // Create map
+    var myMap = new ymaps.Map("map", {
+      center: [53.92048869, 27.65496771],
+      zoom: 12,
+      controls: ['zoomControl', 'geolocationControl', 'typeSelector',
+        'fullscreenControl', 'rulerControl', 'trafficControl'
+      ]
+    });
+    // Create and add geo object on map
+    myMap.geoObjects.add(new ymaps.Placemark([53.91934715, 27.69974355], {
+      balloonContent: 'ул. Какая-то там, д. Какой-то там',
+    }, {
+      preset: 'islands#blueDotIconWithCaption'
+    }));
+  }
+</script>
   </body>
 </html>

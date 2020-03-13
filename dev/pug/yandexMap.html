@@ -1,20 +1,26 @@
 <script type="text/javascript">
-  ymaps.ready(init);
+  setTimeout(function () {
+    var elem = document.createElement('script');
+    elem.type = 'text/javascript';
+    elem.src = '//api-maps.yandex.ru/2.1/?apikey=b22e556f-9495-47ec-982f-f5c814cf72e6&lang=ru_RU&onload=getYaMap';
+    document.getElementsByTagName('body')[0].appendChild(elem);
+  }, 500);
 
-  function init() {
+
+  function getYaMap() {
     // Create map
     var myMap = new ymaps.Map("map", {
-      center: [53.91960558, 27.70118669],
-      zoom: 12
-    }),
-    // Create geo object
-    myGeoObject = new ymaps.GeoObject({
-            geometry: {
-                type: "Point",
-                coordinates: [53.91934715, 27.69974355]
-            },
-  });
-  // Add geo object on map
-  myMap.geoObjects.add(myGeoObject);
-}
+      center: [53.92048869, 27.65496771],
+      zoom: 12,
+      controls: ['zoomControl', 'geolocationControl', 'typeSelector',
+        'fullscreenControl', 'rulerControl', 'trafficControl'
+      ]
+    });
+    // Create and add geo object on map
+    myMap.geoObjects.add(new ymaps.Placemark([53.91934715, 27.69974355], {
+      balloonContent: 'ул. Какая-то там, д. Какой-то там',
+    }, {
+      preset: 'islands#blueDotIconWithCaption'
+    }));
+  }
 </script>
