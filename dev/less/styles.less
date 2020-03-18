@@ -228,7 +228,7 @@ img {
 }
 
 .is-hidden {
-  display: none;
+  display: none !important;
 }
 
 .is-show {
@@ -605,6 +605,7 @@ body.compensate-for-scrollbar {
 
   .xs-block( {
       flex-wrap: wrap;
+      height: 80px;
     }
 
   );
@@ -1825,6 +1826,12 @@ body.compensate-for-scrollbar {
     }
 
   );
+
+  .ie10( {
+      flex: 0 1 54.14%;
+    }
+
+  );
 }
 
 
@@ -1990,6 +1997,10 @@ body.compensate-for-scrollbar {
       }
 
     );
+
+    // @media screen and (min-width:0\0) and (max-width: 992px) {
+    //   width: 35px;
+    // }
   }
 
   &__input-quantity {
@@ -2002,8 +2013,9 @@ body.compensate-for-scrollbar {
   }
 }
 
+
 .product-price-container {
-  flex: 1 1 61%;
+  flex: 0 1 61%;
   max-width: 321px;
 }
 
@@ -2074,6 +2086,7 @@ body.compensate-for-scrollbar {
 }
 
 .button {
+  position: relative;
   width: 44px;
   height: 37px;
   border: 1px solid #BDBDBD;
@@ -2083,13 +2096,17 @@ body.compensate-for-scrollbar {
     border-radius: 3px 0px 0px 3px;
 
     &:before {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      top: 0;
+      margin: auto;
       content: '';
-      margin: 0 auto;
       display: block;
       width: 18px;
       height: 2px;
       background: #595959;
-      border-radius: 1px;
     }
 
     &_sm {
@@ -2101,8 +2118,13 @@ body.compensate-for-scrollbar {
     border-radius: 0px 3px 3px 0px;
 
     &:before {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      top: 0;
+      margin: auto;
       content: '';
-      margin: 0 auto;
       width: 18px;
       height: 2px;
       display: block;
@@ -2111,10 +2133,13 @@ body.compensate-for-scrollbar {
     }
 
     &:after {
-      position: relative;
-      top: -2px;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      top: 0;
+      margin: auto;
       content: '';
-      margin: 0 auto;
       display: block;
       width: 18px;
       height: 2px;
@@ -2156,28 +2181,22 @@ body.compensate-for-scrollbar {
     );
 
     &:before {
-      position: relative;
-      width: 9px;
+      width: 10px;
       height: 1px;
-      right: 2px;
 
       .lg-block( {
           width: 13px;
-          right: 0px;
         }
 
       );
     }
 
     &:after {
-      top: -1px;
-      width: 9px;
+      width: 10px;
       height: 1px;
-      right: 2px;
 
       .lg-block( {
           width: 13px;
-          right: 0px;
         }
 
       );
@@ -2434,6 +2453,11 @@ input[type=radio] {
       }
 
     );
+
+    @media screen and (min-width:0\0) and (max-width: 576px) {
+      display: table-row;
+    }
+
   }
 
   td {
@@ -2692,6 +2716,10 @@ input[type=radio] {
     }
 
   );
+
+  @media screen and (min-width:0\0) and (max-width: 576px) {
+    text-align: center;
+  }
 }
 
 .scheme-table__dropdown {

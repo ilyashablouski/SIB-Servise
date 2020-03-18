@@ -310,7 +310,7 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .is-hidden {
-  display: none;
+  display: none !important;
 }
 
 .is-show {
@@ -1489,7 +1489,7 @@ body.compensate-for-scrollbar {
 }
 
 .product-price-container {
-  flex: 1 1 61%;
+  flex: 0 1 61%;
   max-width: 321px;
 }
 
@@ -1541,6 +1541,7 @@ body.compensate-for-scrollbar {
 }
 
 .button {
+  position: relative;
   width: 44px;
   height: 37px;
   border: 1px solid #BDBDBD;
@@ -1552,13 +1553,17 @@ body.compensate-for-scrollbar {
 }
 
 .button-minus:before {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  margin: auto;
   content: '';
-  margin: 0 auto;
   display: block;
   width: 18px;
   height: 2px;
   background: #595959;
-  border-radius: 1px;
 }
 
 .button-minus_sm {
@@ -1570,8 +1575,13 @@ body.compensate-for-scrollbar {
 }
 
 .button-plus:before {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  margin: auto;
   content: '';
-  margin: 0 auto;
   width: 18px;
   height: 2px;
   display: block;
@@ -1580,10 +1590,13 @@ body.compensate-for-scrollbar {
 }
 
 .button-plus:after {
-  position: relative;
-  top: -2px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  margin: auto;
   content: '';
-  margin: 0 auto;
   display: block;
   width: 18px;
   height: 2px;
@@ -1618,17 +1631,13 @@ body.compensate-for-scrollbar {
 }
 
 .button_sm:before {
-  position: relative;
-  width: 9px;
+  width: 10px;
   height: 1px;
-  right: 2px;
 }
 
 .button_sm:after {
-  top: -1px;
-  width: 9px;
+  width: 10px;
   height: 1px;
-  right: 2px;
 }
 
 .product-block__image,
@@ -1940,6 +1949,10 @@ input[type=radio] {
     width: 100%;
   }
 
+  .product-block__inner:last-child {
+    flex: 0 1 54.14%;
+  }
+
   .tab__title {
     transform: translate(0, -103%);
   }
@@ -1987,12 +2000,10 @@ input[type=radio] {
 
   .button_sm:before {
     width: 13px;
-    right: 0px;
   }
 
   .button_sm:after {
     width: 13px;
-    right: 0px;
   }
 
   .scheme-container__scheme {
@@ -2323,6 +2334,7 @@ input[type=radio] {
 
   .header-sub {
     flex-wrap: wrap;
+    height: 80px;
   }
 
   .logo {
@@ -2597,5 +2609,13 @@ input[type=radio] {
   .search-catalog img,
   .search-scheme img {
     transform: translateY(0%);
+  }
+
+  .scheme-table tr {
+    display: table-row;
+  }
+
+  .scheme-table__price {
+    text-align: center;
   }
 }
