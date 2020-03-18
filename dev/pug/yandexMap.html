@@ -1,26 +1,114 @@
-<script type="text/javascript">
-  setTimeout(function () {
-    var elem = document.createElement('script');
-    elem.type = 'text/javascript';
-    elem.src = '//api-maps.yandex.ru/2.1/?apikey=b22e556f-9495-47ec-982f-f5c814cf72e6&lang=ru_RU&onload=getYaMap';
-    document.getElementsByTagName('body')[0].appendChild(elem);
-  }, 500);
+<script>
+  var spinner = $('.ymap-container').children('.loader');
+  var check_if_load = false;
+  var myMapTemp, myPlacemarkTemp;
 
-
-  function getYaMap() {
-    // Create map
-    var myMap = new ymaps.Map("map", {
-      center: [53.92048869, 27.65496771],
-      zoom: 12,
+  // Create map function
+  function init() {
+    var myMapTemp = new ymaps.Map("map-yandex", {
+      center: [53.92048869, 27.65496771], // координаты центра на карте
+      zoom: 12, // коэффициент приближения карты
       controls: ['zoomControl', 'geolocationControl', 'typeSelector',
         'fullscreenControl', 'rulerControl', 'trafficControl'
       ]
     });
-    // Create and add geo object on map
-    myMap.geoObjects.add(new ymaps.Placemark([53.91934715, 27.69974355], {
+    var myPlacemarkTemp = new ymaps.Placemark([53.91934715, 27.69974355], {
       balloonContent: 'ул. Какая-то там, д. Какой-то там',
     }, {
       preset: 'islands#blueDotIconWithCaption'
-    }));
+    });
+    myMapTemp.geoObjects.add(myPlacemarkTemp);
+
+    var layer = myMapTemp.layers.get(0).get(0);
+
+    waitForTilesLoad(layer).then(function () {
+      spinner.removeClass('is-active');
+    });
   }
+
+  // Detect full load Yandex API
+  function waitForTilesLoad(layer) {
+    return new ymaps.vow.Promise(function (resolve, reject) {
+      var tc = getTileContainer(layer),
+        readyAll = true;
+      tc.tiles.each(function (tile, number) {
+        if (!tile.isReady()) {
+          readyAll = false;
+        }
+      });
+      if (readyAll) {
+        resolve();
+      } else {
+        tc.events.once("ready", function () {
+          resolve();
+        });
+      }
+    });
+  }
+
+  function getTileContainer(layer) {
+    for (var k in layer) {
+      if (layer.hasOwnProperty(k)) {
+        if (
+          layer[k] instanceof ymaps.layer.tileContainer.CanvasContainer ||
+          layer[k] instanceof ymaps.layer.tileContainer.DomContainer
+        ) {
+          return layer[k];
+        }
+      }
+    }
+    return null;
+  }
+
+  // Load Yandex API function
+  function loadScript(url, callback) {
+    var script = document.createElement("script");
+
+    if (script.readyState) { // IE
+      script.onreadystatechange = function () {
+        if (script.readyState == "loaded" ||
+          script.readyState == "complete") {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { // Other browsers
+      script.onload = function () {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  }
+
+  // Main event function
+  var ymap = function () {
+    var targetMap = $('.ymap-container');
+    var targetPos = targetMap.offset().top;
+    var winHeight = $(window).height();
+    var scrollToElem = targetPos - winHeight;
+
+    $(window).scroll(function () {
+      var winScrollTop = $(this).scrollTop();
+      if (winScrollTop >= scrollToElem && !check_if_load) {
+        console.log('YEs call 1');
+        
+          check_if_load = true;
+          spinner.addClass('is-active');
+          // Download API
+          loadScript(
+            "//api-maps.yandex.ru/2.1/?apikey=b22e556f-9495-47ec-982f-f5c814cf72e6&lang=ru_RU&amp;loadByRequire=1",
+            function () {
+              // End download API
+              ymaps.load(init);
+            });
+      }
+    });
+  }
+
+  $(function () {
+    // Call main function
+    ymap();
+  });
 </script>

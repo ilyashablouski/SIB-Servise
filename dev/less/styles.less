@@ -84,8 +84,6 @@ html {
   }
 }
 
-
-
 *,
 *:before,
 *:after {
@@ -1363,9 +1361,91 @@ body.compensate-for-scrollbar {
   .xs(margin-top, 3.9rem);
 }
 
+/* Map lazy-load */
+.ymap-container {
+  position: relative;
+  margin: 3em 0 2em 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  cursor: pointer;
+  background: url('../images/map-before-load.jpg') #ffffff no-repeat;
+  background-position: center center;
+  background-size: cover;
+  box-shadow: 0 0 2em 0 rgba(0, 0, 0, .2);
+}
+
+#map-yandex {
+  position: relative;
+  z-index: 5;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+// map load indicator
+.loader {
+  position: absolute;
+  z-index: 15;
+  top: -100%;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  color: #000000;
+  transition: opacity .7s ease;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, .55);
+}
+
+.loader:after,
+.loader:before {
+  box-sizing: border-box;
+}
+
+.loader.is-active {
+  top: 0;
+  opacity: 1;
+}
+
+.loader-default:after {
+  position: absolute;
+  top: calc(50% - 24px);
+  left: calc(50% - 24px);
+  width: 48px;
+  height: 48px;
+  content: '';
+  animation: rotation 1s linear infinite;
+  border: solid 8px #ffffff;
+  border-left-color: transparent;
+  border-radius: 50%;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes blink {
+  from {
+    opacity: .5;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* End map lazy-load */
+
 .map {
   max-width: 1140px;
-  height: 431px;
+  height: 421px;
 
   .sm(height, 350px);
   .xs(height, 280px);
