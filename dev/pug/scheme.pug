@@ -2,7 +2,7 @@ extends layouts/main-no-login.pug
 
 block variables
   - var pageTitle = 'Страница со схемой';
-  - var scriptSrc = 'js/common.js';
+  - var scriptSrc = 'js/common.mjs';
   - var link = 'css/styles.css';
   - var linkMinCss = 'css/styles.min.css';
 
@@ -13,6 +13,14 @@ block variables
       {number: 'A3', article: '394114605', name: 'Schraubeinsatz', dropdown: '', storage: '', price: false, class: 'js-analog is-hidden'},
       {number: 'A4', article: '957117020', name: 'Halbgasarretierung kpl.', dropdown: '', storage: '> 10', price: true},
     ];
+
+block meta
+  <meta property="og:image" content="favicons/favicon-196x196.png">
+  <meta property="og:title" content="Страница со схемами">
+  <meta property="og:description" content="Схемы с таблицей цен и наличием">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="/scheme/">
+  <link rel="canonical" href="https://ilyashablovsky.github.io/SIB-Servise-server/scheme/">
 
 block content
   .content
@@ -55,7 +63,7 @@ block content
                 +createTableItem(tableDataArray)
                 +createTableItem(tableDataArray)
 
-                tr.scheme-table__header
+                tr.scheme-table__header.scheme-table__header_one
                   th(colspan='7', style='text-align: center;')
                     span.h6 Лист В
                 +createTableItem(tableDataArray)

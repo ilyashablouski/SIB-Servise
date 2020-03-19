@@ -1,13 +1,21 @@
 // Plugins
-const {parallel, series, watch, src, dest} = require('gulp');
+const {
+  parallel,
+  series,
+  watch,
+  src,
+  dest,
+} = require('gulp');
 const pug = require('gulp-pug');
 const less = require('gulp-less');
+const babel = require('gulp-babel');
 const gcmq = require('gulp-group-css-media-queries');
 const autoprefixer = require('gulp-autoprefixer');
 const cleanCSS = require('gulp-clean-css');
 const smartgrid = require('smart-grid');
 const browserSync = require('browser-sync').create();
 const rename = require('gulp-rename');
+const uglify = require('gulp-uglify');
 
 // Globs
 const config = {
@@ -23,8 +31,8 @@ const config = {
     dest: './prod/css',
   },
   js: {
-    src: 'js/+(common).js',
-    watch: 'js/**/*.js',
+    src: 'js/+(common).mjs',
+    watch: 'js/**/*.mjs',
     prod: './prod/js',
   },
 };
@@ -72,6 +80,14 @@ function css() {
  */
 function js() {
   return src(config.root + config.js.src)
+      .pipe(dest(config.js.prod))
+      .pipe(babel())
+      .pipe(uglify({
+        toplevel: true,
+      }))
+      .pipe(rename({
+        extname: '.js',
+      }))
       .pipe(dest(config.js.prod));
 }
 

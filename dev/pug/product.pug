@@ -2,9 +2,17 @@ extends layouts/main-no-login.pug
 
 block variables
   - var pageTitle = 'Страница товара';
-  - var scriptSrc = 'js/common.js';
+  - var scriptSrc = 'js/common.mjs';
   - var link = 'css/styles.css';
   - var linkMinCss = 'css/styles.min.css';
+
+block meta
+  <meta property="og:image" content="favicons/favicon-196x196.png">
+  <meta property="og:title" content="Страница продукта">
+  <meta property="og:description" content="Страница продукта с описанием и ценами">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="/product/">
+  <link rel="canonical" href="https://ilyashablovsky.github.io/SIB-Servise-server/product/">
 
 block content
   .content

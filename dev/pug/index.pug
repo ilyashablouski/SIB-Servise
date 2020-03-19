@@ -2,9 +2,17 @@ extends layouts/main.pug
 
 block variables
   - var pageTitle = 'Главная';
-  - var scriptSrc = 'js/common.js';
+  - var scriptSrc = 'js/common.mjs';
   - var link = 'css/styles.css';
   - var linkMinCss = 'css/styles.min.css';
+
+block meta
+  <meta property="og:image" content="favicons/favicon-196x196.png">
+  <meta property="og:title" content="Сиб-сервис">
+  <meta property="og:description" content="Элекстроинструмент, техника, инструмент.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="/">
+  <link rel="canonical" href="https://ilyashablovsky.github.io/SIB-Servise-server/">
 
 block content
   .content
@@ -111,7 +119,7 @@ block content
                 .category-item.category-items__category-item
                   a.category-item__link(href='#')
                     img.category-item__image(src='images/icons/lawn-mower.svg', alt='Garden technic')
-                    span.category-item__text Садовая техника
+                    span.category-item__text.category-item__text_wrap Садовая техника
 
                 .category-item.category-items__category-item
                   a.category-item__link(href='#')

@@ -1,13 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head><meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Главная</title><link rel="preconnect" href="//api-maps.yandex.ru">
 <link rel="dns-prefetch" href="//api-maps.yandex.ru">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link rel="apple-touch-icon-precomposed" sizes="57x57" href="favicons/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="favicons/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="favicons/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="favicons/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon-precomposed" sizes="60x60" href="favicons/apple-touch-icon-60x60.png" />
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="favicons/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon-precomposed" sizes="76x76" href="favicons/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="favicons/apple-touch-icon-152x152.png" />
+<link rel="icon" type="image/png" href="favicons/favicon-196x196.png" sizes="196x196" />
+<link rel="icon" type="image/png" href="favicons/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/png" href="favicons/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="favicons/favicon-16x16.png" sizes="16x16" />
+<link rel="icon" type="image/png" href="favicons/favicon-128.png" sizes="128x128" />
     <link rel="stylesheet" href="css/styles.min.css">
     <link rel="stylesheet" href="lib/fancybox/jquery.fancybox.min.css">
-    <link rel="stylesheet" href="lib/easyZoom/easyzoom.css">
+    <link rel="stylesheet" href="lib/easyZoom/easyzoom.css"><meta property="og:image" content="favicons/favicon-196x196.png">
+<meta property="og:title" content="Сиб-сервис">
+<meta property="og:description" content="Элекстроинструмент, техника, инструмент.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="/">
+<link rel="canonical" href="https://ilyashablovsky.github.io/SIB-Servise-server/">
   </head>
   <body class="body"><svg width="0" height="0" class="hidden">
   <symbol viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg" id="burger-btn">
@@ -137,7 +154,7 @@
                 <div class="category-items">
                   <div class="category-item category-items__category-item"><a class="category-item-link" href="#"><img class="category-item__image" src="images/icons/auto.svg" alt="Auto"><span class="category-item__text">Авто&nbsp;инстр.</span></a></div>
                   <div class="category-item category-items__category-item"><a class="category-item__link" href="#"><img class="category-item__image" src="images/icons/power-drill.svg" alt="Electric instrument"><span class="category-item__text">Электроинстр.</span></a></div>
-                  <div class="category-item category-items__category-item"><a class="category-item__link" href="#"><img class="category-item__image" src="images/icons/lawn-mower.svg" alt="Garden technic"><span class="category-item__text">Садовая техника</span></a></div>
+                  <div class="category-item category-items__category-item"><a class="category-item__link" href="#"><img class="category-item__image" src="images/icons/lawn-mower.svg" alt="Garden technic"><span class="category-item__text category-item__text_wrap">Садовая техника</span></a></div>
                   <div class="category-item category-items__category-item"><a class="category-item__link" href="#"><img class="category-item__image" src="images/icons/mechanic.svg" alt="Hand tool"><span class="category-item__text">Ручной&nbsp;инстр.</span></a></div>
                   <div class="category-item category-items__category-item"><a class="category-item__link" href="#"><img class="category-item__image" src="images/icons/house-reforms.svg" alt=""><span class="category-item__text">Ручной&nbsp;инстр.</span></a></div>
                   <div class="category-item category-items__category-item"><a class="category-item__link" href="#"><span class="category-item__text">Другие </span></a></div>
@@ -282,7 +299,9 @@
     <script src="lib/jquery-3.4.1.min.js"></script>
     <script src="lib/fancybox/jquery.fancybox.min.js"></script>
     <script src="lib/easyZoom/easyzoom.js"></script>
-    <script src="js/common.js"></script><script>
+    <!-- For modern browsers-->
+    <script type="module" src="js/common.mjs"></script>
+    <!-- For old browsers--><script defer nomodule src="/js/common.js"></script><script>
   var spinner = $('.ymap-container').children('.loader');
   var check_if_load = false;
   var myMapTemp, myPlacemarkTemp;

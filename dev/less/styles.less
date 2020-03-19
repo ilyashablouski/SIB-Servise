@@ -626,6 +626,12 @@ body.compensate-for-scrollbar {
     display: block;
     font-size: 1.6rem;
     color: #6D6D6D;
+
+    .lg-block ( {
+        font-size: 14px;
+      }
+
+    );
   }
 }
 
@@ -724,6 +730,12 @@ body.compensate-for-scrollbar {
     padding: 0.82em 1em 0.95em;
     display: inline-block;
     white-space: nowrap;
+
+    .xs-block ( {
+        font-size: 12px;
+      }
+
+    );
   }
 
   .md-block( {
@@ -787,6 +799,7 @@ body.compensate-for-scrollbar {
 .slider-main {
   font-size: 0;
   .row-flex();
+  flex-wrap: nowrap;
 
   &__image {
     .col-padding();
@@ -794,13 +807,13 @@ body.compensate-for-scrollbar {
     font-size: 0;
 
     &_left {
-      flex: 1 1 69.2%;
-      max-width: 69.2%;
+      flex: 0 1 auto;
+      max-width: 69.9%;
     }
 
     &_right {
-      flex: 1 1 30.8%;
-      max-width: 30.8%;
+      flex: 0 1 auto;
+      max-width: 31.1%;
     }
   }
 }
@@ -1003,7 +1016,7 @@ body.compensate-for-scrollbar {
 }
 
 .category-links {
-  font-size: 10px;
+  font-size: 11px;
 
   &__link {
     border-bottom: 1px solid;
@@ -1049,7 +1062,6 @@ body.compensate-for-scrollbar {
   flex-wrap: wrap;
   width: 100%;
   text-align: center;
-  white-space: normal;
 
   &__category-item {
     margin-top: 1.5em;
@@ -1063,7 +1075,11 @@ body.compensate-for-scrollbar {
   &__text {
     display: block;
     color: #46BFED;
-    font-size: 10px;
+    font-size: 11px;
+
+    &_wrap {
+      white-space: normal;
+    }
   }
 
   &__link {
@@ -1142,6 +1158,12 @@ body.compensate-for-scrollbar {
     padding-top: 0.9rem;
     color: #FFFFFF;
     transition: 0.15s ease-in-out;
+
+    .xs-block( {
+        font-size: 12px;
+      }
+
+    );
   }
 
   &__img {
@@ -1565,6 +1587,12 @@ body.compensate-for-scrollbar {
   padding: 2.4rem 0 10.4rem;
   border-top: 1px solid rgba(187, 187, 187, 0.5);
   font-size: 1.6rem;
+
+  .xs-block( {
+      font-size: 12px;
+    }
+
+  );
 
   &__inner {
     margin-left: -2.5rem;
@@ -2582,6 +2610,15 @@ input[type=radio] {
 
     .lg-block( {
         height: 50px;
+      }
+
+    );
+
+    .xs-block( {
+        &_one th {
+          margin: 0 auto;
+          line-height: 51px;
+        }
       }
 
     );

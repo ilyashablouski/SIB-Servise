@@ -30,30 +30,19 @@ function openCatalogElement(target) {
 /**
  * Open/close pop-up
  *
- * @param {object} target
+ * @param {object} element
  */
-function showPopup(target) {
-  // If we in photo-icon element
-  if (target.classList.contains('photo-icon')) {
-    const popupWindow = target.parentElement.nextElementSibling;
-    popupWindow.classList.toggle('is-show');
-    // If we in photo-icon__inner element
-  } else if (target.classList.contains('photo-icon__inner')) {
-    const popupWindow = target.parentElement.parentElement.nextElementSibling;
-    popupWindow.classList.toggle('is-show');
-  }
+function showPopup(element) {
+  element.classList.toggle('is-show');
 }
 
 /**
- * Open/close pop-up analogs
+ * Rotate pop-up analogs triangle
  *
  * @param {object} target
  */
-function showPopupAnalog(target) {
-  // If we in photo-icon element
-  if (target.classList.contains('scheme-table__dropdown-link')) {
-    target.nextElementSibling.classList.toggle('is-rotate');
-  }
+function rotatePopupAnalog(target) {
+  target.nextElementSibling.classList.toggle('is-rotate');
 }
 
 /**
@@ -111,11 +100,21 @@ window.addEventListener('DOMContentLoaded', () => {
 
       const target = event.target;
 
-      TODO: // Refactoring with switch/case conditions;
-      showPopup(target);
-      showPopupAnalog(target);
+      // If click on photo-icon element
+      if (target.classList.contains('photo-icon')) {
+        const popupWindow = target.parentElement.nextElementSibling;
+        showPopup(popupWindow);
 
+        // If click on photo-icon__inner element
+      } else if (target.classList.contains('photo-icon__inner')) {
+        const popupWindow =
+          target.parentElement.parentElement.nextElementSibling;
+        showPopup(popupWindow);
+      }
+
+      // If click on analogs button
       if (target.classList.contains('scheme-table__dropdown-link')) {
+        rotatePopupAnalog(target);
         showHideAnalogElement(target);
       }
     });
@@ -314,11 +313,11 @@ window.addEventListener('DOMContentLoaded', () => {
           if (e.target.classList.contains('slider__control')) {
             e.preventDefault();
             _move(e.target.classList.contains('slider__control_next') ? 'next' : 'prev');
-            _startAutoplay();
+            // _startAutoplay();
           } else if (e.target.getAttribute('data-slide-to')) {
             e.preventDefault();
             _moveTo(parseInt(e.target.getAttribute('data-slide-to')));
-            _startAutoplay();
+            // _startAutoplay();
           }
         });
         document.addEventListener('visibilitychange', function () {
