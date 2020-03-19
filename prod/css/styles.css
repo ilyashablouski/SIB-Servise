@@ -2039,6 +2039,10 @@ input[type=radio] {
     flex: 0 1 54.14%;
   }
 
+  .easyzoom-flyout img {
+    width: auto;
+  }
+
   .tab__title {
     transform: translate(0, -103%);
   }
