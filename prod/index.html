@@ -252,10 +252,11 @@
         <div class="wrapper">
           <h2 class="h2 map-section__h2">Офис в Минске</h2>
           <div class="map map-section__map">
-            <div class="ymap-container">
-              <!-- Yandex maps Container + loader--><div class="loader loader-default"></div>
+            <!-- Yandex maps container + loader-->
+            <div class="ymap-container"><div class="loader loader-default"></div>
 <div id="map-yandex" style="width: 100%; height: 100%"></div>
             </div>
+            <!-- /Yandex maps container + loader-->
           </div>
           <div class="subscribe-block">
             <div class="subscribe-block__img"><img src="images/icons/icon-subscribe-form.png" alt="Subscribe image"></div>
@@ -395,13 +396,12 @@
     $(window).scroll(function () {
       var winScrollTop = $(this).scrollTop();
       if (winScrollTop >= scrollToElem && !check_if_load) {
-        console.log('YEs call 1');
         
           check_if_load = true;
           spinner.addClass('is-active');
           // Download API
           loadScript(
-            "//api-maps.yandex.ru/2.1/?apikey=b22e556f-9495-47ec-982f-f5c814cf72e6&lang=ru_RU&amp;loadByRequire=1",
+            "//api-maps.yandex.ru/2.1/?apikey=b22e556f-9495-47ec-982f-f5c814cf72e6&lang=ru_RU&load=package.map&loadByRequire=1",
             function () {
               // End download API
               ymaps.load(init);
