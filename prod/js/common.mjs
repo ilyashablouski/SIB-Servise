@@ -1,6 +1,6 @@
-// /**
-//  * Define variables
-//  */
+/**
+* Define variables
+*/
 const infoButton = document.querySelector('.header-nav-info');
 const catalogButton = document.querySelector('.header-nav-catalog');
 const dropdownBlock = document.querySelector('.dropdown-block');
@@ -145,7 +145,7 @@ window.addEventListener('DOMContentLoaded', () => {
   /* eslint-disable */
   /**
    * Slider
-   * 
+   *
    */
   'use strict';
   var slideShow = (function () {
@@ -285,7 +285,7 @@ window.addEventListener('DOMContentLoaded', () => {
         return !!('ontouchstart' in window || navigator.maxTouchPoints);
       };
 
-      // функция, осуществляющая установку обработчиков для событий 
+      // функция, осуществляющая установку обработчиков для событий
       var _setUpListeners = function () {
         var _startX = 0;
         if (_isTouchDevice()) {
@@ -349,7 +349,7 @@ window.addEventListener('DOMContentLoaded', () => {
         next: function () {
           _move('next');
         },
-        // метод слайдера для перехода к предыдущему слайду          
+        // метод слайдера для перехода к предыдущему слайду
         left: function () {
           _move('prev');
         },
@@ -375,7 +375,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   /**
    * Fancybox options
-   * 
+   *
    */
   $('[data-fancybox="gallery"]').fancybox({
     buttons: [
