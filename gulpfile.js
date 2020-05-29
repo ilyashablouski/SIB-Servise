@@ -21,7 +21,7 @@ const uglify = require('gulp-uglify');
 const config = {
   root: './dev/',
   pug: {
-    src: 'pug/+(index).pug',
+    src: 'pug/+(product).pug',
     watch: 'pug/**/*.pug',
     dest: './prod',
   },
@@ -61,7 +61,7 @@ function css() {
       .pipe(gcmq())
       .pipe(dest(config.css.dest))
       .pipe(autoprefixer({
-        browsers: ['last 2 versions'],
+        overrideBrowserslist: ['last 2 versions'],
       }))
       .pipe(cleanCSS({
         level: 2,
@@ -115,6 +115,7 @@ function livereload(done) {
   browserSync.init({
     server: {
       baseDir: './prod/',
+      index: 'product.html',
     },
   });
 
